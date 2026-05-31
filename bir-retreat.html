@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WanderHer — Bir Himalaya Retreat 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,600&family=Dancing+Script:wght@600;700&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root {
+  --void:       #060810;
+  --base:       #090e1a;
+  --surface:    #111e38;
+  --elevated:   #182745;
+  --sky:        #5ab8d4;
+  --sky-light:  #84d0e8;
+  --sky-pale:   #c4e8f5;
+  --gold:       #f3a336;
+  --snow:       #eef4fa;
+  --muted:      #7a92aa;
+  --dim:        #3a4e62;
+  --border:     rgba(90,184,212,0.13);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  background: var(--void);
+  color: var(--snow);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.02; pointer-events: none; z-index: 9999;
+}
+
+/* ── NAV ── */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.25rem 3rem;
+  background: linear-gradient(to bottom, rgba(6,8,16,0.92) 0%, transparent 100%);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  transition: background 0.4s;
+}
+.nav.solid { background: rgba(6,8,16,0.97); }
+
+.nav-brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.nav-brand img { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(90,184,212,0.25); }
+.nav-brand-name { font-family: 'Dancing Script', cursive; font-size: 1.55rem; font-weight: 600; color: var(--snow); }
+
+.nav-links { display: flex; gap: 2.2rem; list-style: none; }
+.nav-links a {
+  color: var(--muted); font-size: 0.8rem; letter-spacing: 0.1em;
+  text-transform: uppercase; text-decoration: none; transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--sky-light); }
+
+.nav-cta {
+  background: var(--sky); color: var(--void);
+  padding: 0.55rem 1.6rem; border-radius: 100px;
+  font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+.nav-cta:hover { background: var(--sky-light); transform: translateY(-1px); box-shadow: 0 6px 24px rgba(90,184,212,0.4); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh; position: relative;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 10rem 2rem 18rem;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 65% 45% at 50% -5%, rgba(90,184,212,0.22) 0%, transparent 65%),
+    radial-gradient(ellipse 120% 50% at 0% 100%, rgba(9,22,46,0.98) 0%, transparent 55%),
+    radial-gradient(ellipse 120% 50% at 100% 100%, rgba(6,14,30,0.98) 0%, transparent 55%),
+    linear-gradient(175deg, #050810 0%, #071220 50%, #0c1e38 100%);
+}
+
+.hero-stars {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 18% 12%, rgba(196,232,245,0.9) 0, transparent 0),
+    radial-gradient(1px 1px at 38% 8%, rgba(196,232,245,0.6) 0, transparent 0),
+    radial-gradient(2px 2px at 62% 6%, rgba(196,232,245,0.8) 0, transparent 0),
+    radial-gradient(1px 1px at 78% 18%, rgba(196,232,245,0.5) 0, transparent 0),
+    radial-gradient(1.5px 1.5px at 8% 28%, rgba(196,232,245,0.7) 0, transparent 0),
+    radial-gradient(1px 1px at 52% 4%, rgba(196,232,245,0.9) 0, transparent 0),
+    radial-gradient(1px 1px at 88% 10%, rgba(196,232,245,0.5) 0, transparent 0),
+    radial-gradient(1.5px 1.5px at 28% 22%, rgba(196,232,245,0.4) 0, transparent 0),
+    radial-gradient(1px 1px at 70% 16%, rgba(196,232,245,0.6) 0, transparent 0),
+    radial-gradient(1px 1px at 14% 7%, rgba(196,232,245,0.8) 0, transparent 0),
+    radial-gradient(2px 2px at 44% 14%, rgba(196,232,245,0.4) 0, transparent 0),
+    radial-gradient(1px 1px at 92% 22%, rgba(196,232,245,0.6) 0, transparent 0);
+}
+
+.hero-dove {
+  width: 88px; height: 88px; border-radius: 50%;
+  margin-bottom: 2.25rem; position: relative;
+  border: 1.5px solid rgba(90,184,212,0.3);
+  animation: float 5s ease-in-out infinite;
+  box-shadow: 0 0 40px rgba(90,184,212,0.25), 0 0 80px rgba(90,184,212,0.1);
+}
+
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+.hero-eyebrow {
+  position: relative; display: inline-flex; align-items: center; gap: 0.6rem;
+  background: rgba(90,184,212,0.07); border: 1px solid rgba(90,184,212,0.22);
+  padding: 0.4rem 1.3rem; border-radius: 100px;
+  font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--sky-light); margin-bottom: 1.75rem;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: ''; width: 4px; height: 4px;
+  background: var(--sky); border-radius: 50; flex-shrink: 0;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  font-weight: 300; line-height: 1.04; letter-spacing: -0.025em;
+  color: var(--snow); position: relative; margin-bottom: 1.5rem;
+}
+.hero-title em { font-style: italic; color: var(--sky-light); display: block; }
+
+.hero-sub {
+  max-width: 520px; color: var(--muted);
+  font-size: 1rem; line-height: 1.85;
+  margin-bottom: 2.75rem; position: relative;
+}
+
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; position: relative; }
+
+.btn-sky {
+  background: var(--sky); color: var(--void);
+  padding: 0.9rem 2.4rem; border-radius: 100px;
+  font-weight: 700; font-size: 0.88rem; letter-spacing: 0.05em;
+  border: none; cursor: pointer; text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: 'Nunito', sans-serif;
+}
+.btn-sky:hover { background: var(--sky-light); transform: translateY(-2px); box-shadow: 0 10px 32px rgba(90,184,212,0.45); }
+
+.btn-ghost {
+  background: transparent; color: var(--snow);
+  padding: 0.9rem 2.4rem; border-radius: 100px;
+  font-weight: 400; font-size: 0.88rem; letter-spacing: 0.04em;
+  border: 1px solid rgba(255,255,255,0.12); cursor: pointer;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+  transition: all 0.3s; font-family: 'Nunito', sans-serif;
+}
+.btn-ghost:hover { border-color: rgba(90,184,212,0.4); color: var(--sky-light); }
+
+.hero-mountain { position: absolute; bottom: 0; left: 0; right: 0; z-index: 1; }
+
+.hero-stats {
+  position: absolute; bottom: 6.5rem; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 4rem; z-index: 2;
+}
+.h-stat { text-align: center; }
+.h-stat .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; font-weight: 300; color: var(--sky-light); display: block;
+}
+.h-stat .lbl { font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
+
+.hero-scroll {
+  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem; z-index: 2;
+}
+.hero-scroll span { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); }
+.scroll-line { width: 1px; height: 38px; background: linear-gradient(to bottom, var(--dim), transparent); animation: pulse 2.2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 0.3; } 50% { opacity: 1; } }
+
+/* ── LAYOUT ── */
+.section { padding: 6rem 0; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.sec-lbl { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sky); margin-bottom: 0.8rem; }
+.sec-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 300; line-height: 1.1; color: var(--snow);
+}
+.sec-title em { font-style: italic; color: var(--sky-pale); }
+.divider { width: 56px; height: 1px; background: linear-gradient(90deg, transparent, var(--sky), transparent); margin: 1.75rem auto; }
+
+/* ── ABOUT ── */
+.about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center; }
+
+.about-img { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 3/4; }
+.about-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-img::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(135deg, rgba(90,184,212,0.18) 0%, transparent 55%),
+              linear-gradient(to bottom, transparent 50%, rgba(6,8,16,0.75) 100%);
+}
+.about-img-foot {
+  position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; z-index: 2;
+  background: rgba(9,14,26,0.82); backdrop-filter: blur(14px);
+  border: 1px solid rgba(90,184,212,0.14); border-radius: 12px;
+  padding: 1rem 1.25rem; display: flex; gap: 1.5rem;
+}
+.img-foot-item { flex: 1; }
+.img-foot-item .lbl { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
+.img-foot-item .val { font-size: 0.88rem; font-weight: 500; }
+
+.about-pills { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1.75rem; }
+.about-pill {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.2rem; background: rgba(17,30,56,0.85);
+  border: 1px solid rgba(90,184,212,0.16); border-radius: 12px; transition: all 0.3s;
+}
+.about-pill:hover { border-color: rgba(90,184,212,0.3); background: rgba(20,36,66,0.95); }
+.pill-icon {
+  width: 40px; height: 40px; background: rgba(90,184,212,0.1);
+  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; flex-shrink: 0;
+}
+.pill-title { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.2rem; }
+.pill-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
+
+/* ── EXPERIENCES ── */
+.exp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
+.exp-card {
+  background: var(--surface); border: 1px solid rgba(90,184,212,0.15);
+  border-radius: 16px; overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94); cursor: pointer;
+}
+.exp-card:hover {
+  border-color: rgba(90,184,212,0.32); transform: translateY(-5px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(90,184,212,0.1);
+}
+.exp-img { position: relative; height: 195px; overflow: hidden; }
+.exp-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display: block; }
+.exp-card:hover .exp-img img { transform: scale(1.06); }
+.exp-img::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(6,8,16,0.1) 0%, rgba(6,8,16,0.65) 100%);
+}
+.exp-tag {
+  position: absolute; top: 0.9rem; left: 0.9rem; z-index: 1;
+  background: rgba(6,8,16,0.72); backdrop-filter: blur(8px);
+  border: 1px solid rgba(90,184,212,0.22);
+  padding: 0.22rem 0.7rem; border-radius: 100px;
+  font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky-light);
+}
+.exp-body { padding: 1.4rem; }
+.exp-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 400; margin-bottom: 0.45rem; color: var(--snow);
+}
+.exp-desc { color: var(--muted); font-size: 0.84rem; line-height: 1.7; }
+
+/* ── ITINERARY ── */
+.itin-wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4.5rem; align-items: start; }
+.itin-aside-stat { text-align: center; }
+.itin-aside-stat .n { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--sky-light); }
+.itin-aside-stat .l { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+.day-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.day-item {
+  background: var(--surface); border: 1px solid var(--border);
+  border-left: 2px solid var(--sky); border-radius: 0 13px 13px 0; overflow: hidden;
+}
+.day-head {
+  display: flex; align-items: center; gap: 1.4rem;
+  padding: 1.35rem 1.75rem; cursor: pointer; transition: background 0.3s;
+}
+.day-head:hover { background: rgba(90,184,212,0.04); }
+.day-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem; font-weight: 300; color: var(--dim); line-height: 1; min-width: 44px;
+  transition: color 0.3s;
+}
+.day-item.open .day-n { color: var(--sky-light); }
+.day-meta { flex: 1; }
+.day-title { font-size: 1rem; font-weight: 500; margin-bottom: 0.18rem; }
+.day-sub { font-size: 0.78rem; color: var(--muted); }
+.day-chev {
+  width: 24px; height: 24px; border-radius: 50%;
+  border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 0.65rem; flex-shrink: 0; transition: all 0.3s;
+}
+.day-item.open .day-chev { background: var(--sky); border-color: var(--sky); color: var(--void); transform: rotate(180deg); }
+
+.day-body { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.25,0.46,0.45,0.94); }
+.day-item.open .day-body { max-height: 420px; }
+.day-acts { padding: 0 1.75rem 1.35rem; display: flex; flex-direction: column; gap: 0.7rem; }
+.day-act { display: flex; gap: 1rem; align-items: flex-start; }
+.act-time { font-size: 0.72rem; color: var(--sky); letter-spacing: 0.07em; min-width: 68px; padding-top: 0.1rem; }
+.act-text { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+/* ── INCLUDED ── */
+.incl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.incl-card {
+  display: flex; gap: 1rem; align-items: flex-start;
+  padding: 1.2rem; background: var(--surface);
+  border: 1px solid rgba(90,184,212,0.15); border-radius: 12px; transition: all 0.3s;
+}
+.incl-card:hover { border-color: rgba(90,184,212,0.28); }
+.incl-icon {
+  width: 38px; height: 38px; background: rgba(90,184,212,0.1);
+  border-radius: 9px; display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.incl-name { font-size: 0.88rem; font-weight: 500; margin-bottom: 0.22rem; }
+.incl-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+/* ── GALLERY ── */
+.gal-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr 1fr;
+  grid-template-rows: 250px 250px; gap: 1rem;
+}
+.gal-item { border-radius: 14px; overflow: hidden; position: relative; }
+.gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display: block; }
+.gal-item:hover img { transform: scale(1.06); }
+.gal-item:first-child { grid-row: 1 / 3; }
+.gal-item::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 45%, rgba(6,8,16,0.55) 100%);
+  opacity: 0; transition: opacity 0.35s;
+}
+.gal-item:hover::after { opacity: 1; }
+
+/* ── TESTIMONIALS ── */
+.test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
+.test-card {
+  background: var(--surface); border: 1px solid rgba(90,184,212,0.16);
+  border-radius: 16px; padding: 2rem; position: relative;
+}
+.test-card::before {
+  content: '\201C'; font-family: 'Cormorant Garamond', serif;
+  font-size: 5.5rem; color: var(--sky); opacity: 0.18;
+  position: absolute; top: -0.8rem; left: 1.5rem; line-height: 1; pointer-events: none;
+}
+.test-stars { color: #f3a336; font-size: 0.82rem; margin-bottom: 0.7rem; letter-spacing: 2px; }
+.test-text { font-size: 0.88rem; color: var(--muted); line-height: 1.82; margin-bottom: 1.4rem; position: relative; }
+.test-ava { display: flex; gap: 0.75rem; align-items: center; }
+.test-ava img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.test-name { font-size: 0.86rem; font-weight: 500; }
+.test-loc { font-size: 0.73rem; color: var(--muted); }
+
+/* ── FORM ── */
+.form-card {
+  background: var(--surface); border: 1px solid rgba(90,184,212,0.18);
+  border-radius: 20px; padding: 3rem;
+}
+.fg { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+.fg-full { grid-column: 1 / -1; }
+.fgroup { display: flex; flex-direction: column; gap: 0.45rem; }
+.flabel { font-size: 0.7rem; letter-spacing: 0.11em; text-transform: uppercase; color: var(--muted); }
+.finput, .fselect, .ftextarea {
+  background: rgba(90,184,212,0.04); border: 1px solid rgba(90,184,212,0.12);
+  border-radius: 10px; padding: 0.8rem 1.15rem;
+  color: var(--snow); font-family: 'Nunito', sans-serif; font-size: 0.9rem;
+  transition: all 0.3s; outline: none; width: 100%;
+}
+.finput::placeholder, .ftextarea::placeholder { color: var(--dim); }
+.finput:focus, .fselect:focus, .ftextarea:focus {
+  border-color: var(--sky); background: rgba(90,184,212,0.07);
+  box-shadow: 0 0 0 3px rgba(90,184,212,0.1);
+}
+.fselect {
+  appearance: none; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 4 5-4' stroke='%236a7e94' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 1.1rem center;
+}
+.fselect option { background: var(--surface); }
+.ftextarea { resize: vertical; min-height: 96px; }
+.fcheck { display: flex; gap: 0.7rem; align-items: flex-start; cursor: pointer; }
+.fcheck input { width: 17px; height: 17px; accent-color: var(--sky); flex-shrink: 0; margin-top: 0.15rem; }
+.fcheck-lbl { font-size: 0.83rem; color: var(--muted); line-height: 1.55; }
+
+.success-screen {
+  display: none; text-align: center; padding: 2.5rem 2rem;
+}
+.check-circle {
+  width: 72px; height: 72px; background: rgba(90,184,212,0.1);
+  border: 2px solid var(--sky); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 1.25rem; font-size: 1.75rem;
+}
+
+/* ── PAYMENT ── */
+.pay-card {
+  background: var(--surface); border: 1px solid rgba(90,184,212,0.18);
+  border-radius: 20px; padding: 3rem;
+}
+.pkg-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 2.25rem; }
+.pkg-item {
+  background: var(--elevated); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.5rem; cursor: pointer;
+  transition: all 0.3s; position: relative; text-align: left;
+  font-family: 'Nunito', sans-serif;
+}
+.pkg-item.active { border-color: var(--sky); background: rgba(90,184,212,0.07); }
+.pkg-item:hover { border-color: rgba(90,184,212,0.3); }
+.pkg-badge {
+  position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+  background: var(--gold); color: var(--void);
+  padding: 0.18rem 0.8rem; border-radius: 100px;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap;
+}
+.pkg-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+.pkg-price { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--snow); }
+.pkg-per { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.75rem; }
+.pkg-feats { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+.pkg-feats li { font-size: 0.76rem; color: var(--muted); display: flex; gap: 0.4rem; }
+.pkg-feats li::before { content: '✓'; color: var(--sky); font-size: 0.68rem; flex-shrink: 0; padding-top: 0.1rem; }
+
+.pay-total {
+  background: rgba(90,184,212,0.06); border: 1px solid rgba(90,184,212,0.12);
+  border-radius: 12px; padding: 1.2rem 1.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 2rem;
+}
+.pay-total-lbl { font-size: 0.8rem; color: var(--muted); }
+.pay-total-sub { font-size: 0.72rem; color: var(--dim); margin-top: 0.1rem; }
+.pay-total-amt { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--sky-light); }
+
+.pay-tabs {
+  display: inline-flex; gap: 0.4rem; padding: 0.3rem;
+  background: rgba(90,184,212,0.05); border-radius: 100px; margin-bottom: 2rem;
+}
+.pay-tab {
+  padding: 0.5rem 1.4rem; border-radius: 100px; font-size: 0.8rem;
+  cursor: pointer; transition: all 0.3s; border: none; background: transparent;
+  color: var(--muted); font-family: 'Nunito', sans-serif;
+}
+.pay-tab.active { background: var(--sky); color: var(--void); font-weight: 700; }
+.pay-tab:not(.active):hover { color: var(--sky-light); }
+
+.card-panel, .upi-panel { display: none; }
+.card-panel.show, .upi-panel.show { display: block; }
+
+.cc-preview {
+  background: linear-gradient(135deg, rgba(90,184,212,0.18), rgba(18,32,58,0.92));
+  border: 1px solid rgba(90,184,212,0.2); border-radius: 16px;
+  padding: 2rem; margin-bottom: 2rem; position: relative; overflow: hidden; min-height: 168px;
+}
+.cc-preview::before {
+  content: ''; position: absolute; top: -55px; right: -35px;
+  width: 210px; height: 210px; border-radius: 50%;
+  border: 1px solid rgba(90,184,212,0.07);
+}
+.cc-preview::after {
+  content: ''; position: absolute; bottom: -70px; right: 35px;
+  width: 155px; height: 155px; border-radius: 50%;
+  border: 1px solid rgba(90,184,212,0.05);
+}
+.cc-chip {
+  width: 34px; height: 24px; border-radius: 5px;
+  background: linear-gradient(135deg, #f3a336, #d4891e);
+  margin-bottom: 1.75rem;
+}
+.cc-num { font-family: 'Courier New', monospace; font-size: 1.1rem; letter-spacing: 0.2em; color: rgba(238,244,250,0.8); margin-bottom: 1.4rem; }
+.cc-row { display: flex; justify-content: space-between; }
+.cc-lbl { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
+.cc-val { font-size: 0.8rem; color: var(--snow); }
+
+.upi-opts { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.5rem; }
+.upi-opt {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  background: rgba(90,184,212,0.04); border: 1px solid rgba(90,184,212,0.1);
+  border-radius: 10px; cursor: pointer; transition: all 0.3s;
+  font-family: 'Nunito', sans-serif;
+}
+.upi-opt:hover { border-color: var(--sky); background: rgba(90,184,212,0.08); }
+.upi-logo {
+  width: 40px; height: 24px; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; font-weight: 800; flex-shrink: 0;
+}
+.upi-name { font-size: 0.88rem; }
+
+/* ── FAQ ── */
+.faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.faq-item {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden;
+}
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 1.5rem; cursor: pointer; transition: background 0.3s;
+}
+.faq-q:hover { background: rgba(90,184,212,0.04); }
+.faq-q-txt { font-size: 0.94rem; font-weight: 400; }
+.faq-chev { font-size: 0.65rem; color: var(--muted); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-chev { transform: rotate(180deg); color: var(--sky); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
+.faq-item.open .faq-a { max-height: 280px; }
+.faq-a-in { padding: 0 1.5rem 1.2rem; font-size: 0.86rem; color: var(--muted); line-height: 1.78; }
+
+/* ── FOOTER ── */
+footer { background: var(--surface); border-top: 1px solid var(--border); padding: 4rem 0 2rem; }
+.footer-g { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-logo img { width: 56px; height: 56px; border-radius: 50%; margin-bottom: 1rem; border: 1px solid rgba(90,184,212,0.2); }
+.footer-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.8; max-width: 280px; }
+.footer-heading { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sky); margin-bottom: 1rem; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-links a { font-size: 0.83rem; color: var(--muted); text-decoration: none; transition: color 0.3s; }
+.footer-links a:hover { color: var(--sky-light); }
+.footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-bottom p { font-size: 0.76rem; color: var(--dim); }
+.socials { display: flex; gap: 0.75rem; }
+.social-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--border); display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 0.85rem; text-decoration: none;
+  transition: all 0.3s;
+}
+.social-btn:hover { border-color: var(--sky); color: var(--sky-light); background: rgba(90,184,212,0.08); }
+
+/* ── TOAST ── */
+.toast {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 9998;
+  background: var(--elevated); border: 1px solid rgba(90,184,212,0.22);
+  border-radius: 12px; padding: 1rem 1.5rem;
+  color: var(--snow); font-size: 0.88rem; max-width: 380px;
+  transform: translateY(120px); opacity: 0;
+  transition: all 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  font-family: 'Nunito', sans-serif;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+
+/* ── SCROLL REVEAL ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+.fade-up { opacity: 0; }
+.fade-up.in { animation: fadeUp 0.7s cubic-bezier(0.25,0.46,0.45,0.94) both; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-img { aspect-ratio: 16/9; }
+  .exp-grid { grid-template-columns: 1fr 1fr; }
+  .itin-wrap { grid-template-columns: 1fr; }
+  .incl-grid { grid-template-columns: 1fr; }
+  .test-grid { grid-template-columns: 1fr; gap: 1.4rem; }
+  .footer-g { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero-stats { gap: 2rem; }
+  .h-stat .num { font-size: 2rem; }
+  .exp-grid { grid-template-columns: 1fr; }
+  .fg { grid-template-columns: 1fr; }
+  .pkg-grid { grid-template-columns: 1fr; }
+  .gal-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .gal-item:first-child { grid-row: auto; }
+  .footer-g { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-stats { flex-wrap: wrap; justify-content: center; bottom: 4.5rem; }
+  .form-card { padding: 2rem 1.5rem; }
+  .pay-card { padding: 2rem 1.5rem; }
+}
+
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--void); }
+::-webkit-scrollbar-thumb { background: var(--dim); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ NAV ═══════════════════════ -->
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-brand">
+    <img src="assets/logo.jpeg" alt="WanderHer">
+    <span class="nav-brand-name">WanderHer</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Retreats <span class="chev">▾</span></a>
+      <ul class="dropdown">
+        <li><a href="bir-retreat.html" class="active">🏔️ Bir, Himachal Pradesh</a></li>
+        <li><a href="rishikesh-retreat.html">🌊 Rishikesh, Uttarakhand</a></li>
+      </ul>
+    </li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="#register" class="nav-cta">Reserve My Spot</a>
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-stars"></div>
+
+  <!-- Mountain silhouette -->
+  <div class="hero-mountain">
+    <svg viewBox="0 0 1440 280" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 280 L110 195 L230 225 L310 148 L425 96 L510 132 L568 72 L668 28 L755 74 L835 36 L915 94 L995 55 L1090 108 L1168 78 L1265 136 L1345 98 L1440 158 L1440 280 Z" fill="#060810" opacity="0.98"/>
+      <path d="M0 280 L75 235 L175 255 L255 215 L335 235 L415 200 L498 222 L595 182 L695 212 L795 178 L895 204 L995 192 L1095 210 L1195 196 L1300 220 L1440 206 L1440 280 Z" fill="#09101e" opacity="0.96"/>
+      <!-- Snow caps -->
+      <path d="M658 28 L668 28 L690 52 L668 46 L646 52 Z" fill="rgba(196,232,245,0.35)"/>
+      <path d="M825 36 L835 36 L850 56 L835 50 L820 56 Z" fill="rgba(196,232,245,0.28)"/>
+      <path d="M985 55 L995 55 L1008 72 L995 66 L982 72 Z" fill="rgba(196,232,245,0.22)"/>
+      <!-- Glow at peaks -->
+      <circle cx="668" cy="28" r="18" fill="rgba(90,184,212,0.06)"/>
+      <circle cx="835" cy="36" r="14" fill="rgba(90,184,212,0.05)"/>
+    </svg>
+  </div>
+
+  <img src="assets/logo.jpeg"
+       alt="WanderHer" class="hero-dove">
+
+  <div class="hero-eyebrow">Bir Billing, Himachal Pradesh &nbsp;·&nbsp; September 2025</div>
+
+  <h1 class="hero-title">
+    Come home<br>
+    <em>to yourself.</em>
+  </h1>
+
+  <p class="hero-sub">
+    A 5-day immersive women's retreat in the Himalayan village of Bir — where paragliders soar above ancient monasteries and you remember what silence feels like.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#register" class="btn-sky">✦ Reserve My Spot</a>
+    <a href="#about" class="btn-ghost">Explore the Retreat ↓</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="h-stat"><span class="num">5</span><div class="lbl">Days & Nights</div></div>
+    <div class="h-stat"><span class="num">20</span><div class="lbl">Limited Spots</div></div>
+    <div class="h-stat"><span class="num">7,200</span><div class="lbl">Feet Above Sea</div></div>
+    <div class="h-stat"><span class="num">100%</span><div class="lbl">Women-Only</div></div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img fade-up">
+        <img src="https://images.unsplash.com/photo-1740512373753-de429e368377?auto=format&fit=crop&w=600&q=80" alt="Bir Valley sunset mountains" loading="lazy">
+        <div class="about-img-foot">
+          <div class="img-foot-item">
+            <div class="lbl">Location</div>
+            <div class="val">Bir Billing, HP</div>
+          </div>
+          <div class="img-foot-item">
+            <div class="lbl">Elevation</div>
+            <div class="val">~7,200 ft</div>
+          </div>
+          <div class="img-foot-item">
+            <div class="lbl">Best Season</div>
+            <div class="val">Sept – Nov</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-up" style="animation-delay:0.1s">
+        <p class="sec-lbl">About the Retreat</p>
+        <h2 class="sec-title" style="margin-bottom:1.4rem">Bir. Where the sky<br>meets <em>the soul.</em></h2>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:1.35rem;font-size:0.94rem">
+          Nestled in the Kangra Valley of Himachal Pradesh, Bir Billing is the paragliding capital of India — but for us, it's a sanctuary. An escape from the noise, the hustle, the endless scroll.
+        </p>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:2rem;font-size:0.94rem">
+          WanderHer brings together 20 women for 5 transformative days of adventure, deep connection, and true rest. Wake up to mountain vistas, breathe pine-scented air, and rediscover the parts of yourself you may have forgotten.
+        </p>
+        <div class="about-pills">
+          <div class="about-pill">
+            <div class="pill-icon">🕊️</div>
+            <div>
+              <div class="pill-title">Women-First Space</div>
+              <div class="pill-desc">A carefully curated, safe, and supportive environment built exclusively for women travelers.</div>
+            </div>
+          </div>
+          <div class="about-pill">
+            <div class="pill-icon">🏔️</div>
+            <div>
+              <div class="pill-title">Himalayan Immersion</div>
+              <div class="pill-desc">Monastery walks, forest treks, and sunset points that will stay with you long after you leave.</div>
+            </div>
+          </div>
+          <div class="about-pill">
+            <div class="pill-icon">🌿</div>
+            <div>
+              <div class="pill-title">Fully Curated</div>
+              <div class="pill-desc">Every meal, activity, and moment thoughtfully planned — you just show up and surrender.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ EXPERIENCES ═══════════════════════ -->
+<section class="section" id="experiences" style="background:rgba(13,22,40,0.4)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem" class="fade-up">
+      <p class="sec-lbl">What You'll Do</p>
+      <h2 class="sec-title">Experiences curated for<br><em>the wandering soul</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card fade-up">
+        <div class="exp-img">
+          <img src="https://images.unsplash.com/photo-1625124313248-903aa145ac51?auto=format&fit=crop&w=700&h=300&q=80" alt="Paragliding over Bir Billing" loading="lazy">
+          <span class="exp-tag">Adventure</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-name">Paragliding over Bir</h3>
+          <p class="exp-desc">Soar above the Kangra Valley on a tandem paragliding flight from Billing launch site at 8,300 ft. A true bucket-list moment.</p>
+        </div>
+      </div>
+      <div class="exp-card fade-up" style="animation-delay:0.08s">
+        <div class="exp-img">
+          <img src="https://images.unsplash.com/photo-1524863479829-916d8e77f114?auto=format&fit=crop&w=700&h=300&q=80" alt="Sunrise yoga in mountains" loading="lazy">
+          <span class="exp-tag">Wellness</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-name">Sunrise Yoga & Meditation</h3>
+          <p class="exp-desc">Begin each morning with guided yoga and breathwork facing the Dhauladhar range — the ultimate way to greet the day.</p>
+        </div>
+      </div>
+      <div class="exp-card fade-up" style="animation-delay:0.16s">
+        <div class="exp-img">
+          <img src="https://images.unsplash.com/photo-1607066511406-a4b389dc138e?auto=format&fit=crop&w=700&h=300&q=80" alt="Tibetan prayer flags monastery" loading="lazy">
+          <span class="exp-tag">Culture</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-name">Tibetan Monastery Trail</h3>
+          <p class="exp-desc">Walk through Bir's famous Tibetan colony, exploring prayer-flag-lined monasteries and traditional tea houses.</p>
+        </div>
+      </div>
+      <div class="exp-card fade-up" style="animation-delay:0.08s">
+        <div class="exp-img">
+          <img src="https://images.unsplash.com/photo-1572109801525-0bb0272e8579?auto=format&fit=crop&w=700&h=300&q=80" alt="Himalayan mountain trekking" loading="lazy">
+          <span class="exp-tag">Nature</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-name">Sunset Trek & Viewpoints</h3>
+          <p class="exp-desc">Trek through cedar and rhododendron forests to panoramic sunset viewpoints. Watch the mountains turn pink and gold.</p>
+        </div>
+      </div>
+      <div class="exp-card fade-up" style="animation-delay:0.16s">
+        <div class="exp-img">
+          <img src="https://images.unsplash.com/photo-1722641277067-a7fba0ad1a59?auto=format&fit=crop&w=700&h=300&q=80" alt="Campfire in the mountains at night" loading="lazy">
+          <span class="exp-tag">Community</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-name">Bonfire Evenings</h3>
+          <p class="exp-desc">Gather under the Himalayan stars every evening. Share stories, sing songs, and make friends for life around the fire.</p>
+        </div>
+      </div>
+      <div class="exp-card fade-up" style="animation-delay:0.24s">
+        <div class="exp-img">
+          <img src="https://images.unsplash.com/photo-1647999019630-dabe1a837693?auto=format&fit=crop&w=700&h=300&q=80" alt="Himalayan cuisine dumplings momos" loading="lazy">
+          <span class="exp-tag">Food</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-name">Himalayan Culinary Journey</h3>
+          <p class="exp-desc">From thukpa and momos to fresh Tibetan bread — every meal is an experience. All dietary preferences accommodated.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ ITINERARY ═══════════════════════ -->
+<section class="section" id="itinerary">
+  <div class="container">
+    <div class="itin-wrap">
+      <div class="fade-up">
+        <p class="sec-lbl">Day by Day</p>
+        <h2 class="sec-title" style="margin-bottom:1rem">Five days to<br><em>rediscover you</em></h2>
+        <div class="divider" style="margin:1.5rem 0 1.5rem 0"></div>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:2.25rem;font-size:0.9rem">
+          Every hour is thoughtfully planned — but never overplanned. You'll have space to breathe, to wander, to simply be present with the mountains.
+        </p>
+        <div style="display:flex;gap:2.5rem;flex-wrap:wrap">
+          <div class="itin-aside-stat"><div class="n">5</div><div class="l">Days</div></div>
+          <div class="itin-aside-stat"><div class="n">12+</div><div class="l">Activities</div></div>
+          <div class="itin-aside-stat"><div class="n">20</div><div class="l">Max Group</div></div>
+        </div>
+        <div style="margin-top:2.25rem;padding:1.5rem;background:rgba(90,184,212,0.06);border:1px solid rgba(90,184,212,0.14);border-radius:14px">
+          <p style="font-size:0.82rem;color:var(--muted);line-height:1.75">
+            <strong style="color:var(--sky-light);font-weight:500">Dates:</strong> September 18–22, 2025<br>
+            <strong style="color:var(--sky-light);font-weight:500">Depart from:</strong> Bir village — we recommend arriving a day early<br>
+            <strong style="color:var(--sky-light);font-weight:500">Flights:</strong> Gaggal Airport (IXH) or train to Pathankot
+          </p>
+        </div>
+      </div>
+
+      <div class="day-list fade-up" style="animation-delay:0.12s">
+        <div class="day-item" onclick="toggleDay(this)">
+          <div class="day-head">
+            <span class="day-n">01</span>
+            <div class="day-meta">
+              <div class="day-title">Arrival & First Light</div>
+              <div class="day-sub">Settle in · Welcome tea · Sunset walk</div>
+            </div>
+            <div class="day-chev">▾</div>
+          </div>
+          <div class="day-body">
+            <div class="day-acts">
+              <div class="day-act"><span class="act-time">Afternoon</span><span class="act-text">Arrive in Bir. Check in, unpack, breathe in the mountain air.</span></div>
+              <div class="day-act"><span class="act-time">4:00 PM</span><span class="act-text">Welcome tea & orientation circle. Meet your fellow wanderers.</span></div>
+              <div class="day-act"><span class="act-time">6:00 PM</span><span class="act-text">Sunset walk to the hilltop viewpoint overlooking Kangra Valley.</span></div>
+              <div class="day-act"><span class="act-time">8:00 PM</span><span class="act-text">Welcome dinner under the stars. Local Himachali cuisine, served with heart.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-item" onclick="toggleDay(this)">
+          <div class="day-head">
+            <span class="day-n">02</span>
+            <div class="day-meta">
+              <div class="day-title">Take Flight</div>
+              <div class="day-sub">Paragliding · Monastery walk · Bonfire</div>
+            </div>
+            <div class="day-chev">▾</div>
+          </div>
+          <div class="day-body">
+            <div class="day-acts">
+              <div class="day-act"><span class="act-time">6:30 AM</span><span class="act-text">Sunrise yoga facing the Dhauladhar range. Breathwork & morning set.</span></div>
+              <div class="day-act"><span class="act-time">10:00 AM</span><span class="act-text">Drive to Billing (8,300 ft). Tandem paragliding flight over Bir Valley.</span></div>
+              <div class="day-act"><span class="act-time">3:00 PM</span><span class="act-text">Walk through the Tibetan colony. Visit Chokling Monastery and traditional tea houses.</span></div>
+              <div class="day-act"><span class="act-time">7:30 PM</span><span class="act-text">Bonfire evening with traditional music. Open sharing circle under the stars.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-item" onclick="toggleDay(this)">
+          <div class="day-head">
+            <span class="day-n">03</span>
+            <div class="day-meta">
+              <div class="day-title">Into the Forest</div>
+              <div class="day-sub">Forest trek · Waterfall · Local market</div>
+            </div>
+            <div class="day-chev">▾</div>
+          </div>
+          <div class="day-body">
+            <div class="day-acts">
+              <div class="day-act"><span class="act-time">6:30 AM</span><span class="act-text">Morning meditation with optional journaling by the window.</span></div>
+              <div class="day-act"><span class="act-time">9:00 AM</span><span class="act-text">Half-day forest trek through cedar and oak woods. Visit a hidden waterfall.</span></div>
+              <div class="day-act"><span class="act-time">3:00 PM</span><span class="act-text">Bir village market — shop for Tibetan artifacts, prayer flags, and handmade gems.</span></div>
+              <div class="day-act"><span class="act-time">Evening</span><span class="act-text">Free evening. Rest, reflect, café-hop, or simply watch the sky change.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-item" onclick="toggleDay(this)">
+          <div class="day-head">
+            <span class="day-n">04</span>
+            <div class="day-meta">
+              <div class="day-title">Rest & Culture</div>
+              <div class="day-sub">Sound healing · Cooking class · Stargazing</div>
+            </div>
+            <div class="day-chev">▾</div>
+          </div>
+          <div class="day-body">
+            <div class="day-acts">
+              <div class="day-act"><span class="act-time">Morning</span><span class="act-text">Slow morning. Yin yoga and sound healing with Tibetan singing bowls.</span></div>
+              <div class="day-act"><span class="act-time">12:00 PM</span><span class="act-text">Hands-on Tibetan & Himachali cooking class. Learn, cook, eat together.</span></div>
+              <div class="day-act"><span class="act-time">Afternoon</span><span class="act-text">Free time — hammocks, books, and café-hopping through Bir village.</span></div>
+              <div class="day-act"><span class="act-time">9:00 PM</span><span class="act-text">Stargazing session. The Milky Way at 7,200 ft is nothing short of breathtaking.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="day-item" onclick="toggleDay(this)">
+          <div class="day-head">
+            <span class="day-n">05</span>
+            <div class="day-meta">
+              <div class="day-title">Farewell to the Mountains</div>
+              <div class="day-sub">Closing circle · Breakfast · Depart</div>
+            </div>
+            <div class="day-chev">▾</div>
+          </div>
+          <div class="day-body">
+            <div class="day-acts">
+              <div class="day-act"><span class="act-time">Sunrise</span><span class="act-text">Final sunrise yoga. Set intentions to carry home with you.</span></div>
+              <div class="day-act"><span class="act-time">9:00 AM</span><span class="act-text">Closing gratitude circle. Share what you're taking home.</span></div>
+              <div class="day-act"><span class="act-time">11:00 AM</span><span class="act-text">Farewell breakfast with mountain views. WanderHer gift exchange.</span></div>
+              <div class="day-act"><span class="act-time">Afternoon</span><span class="act-text">Departures. Carry the mountains with you, always. ✦</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ INCLUDED ═══════════════════════ -->
+<section class="section" style="background:rgba(13,22,40,0.4)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem" class="fade-up">
+      <p class="sec-lbl">The Details</p>
+      <h2 class="sec-title">Everything you need,<br><em>nothing you don't.</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="incl-grid fade-up">
+      <div class="incl-card"><div class="incl-icon">🏡</div><div><div class="incl-name">Accommodation</div><div class="incl-desc">4 nights in a handpicked mountain homestay or boutique property with valley views.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🍽️</div><div><div class="incl-name">All Meals</div><div class="incl-desc">Wholesome breakfasts, lunches, and dinners daily. All dietary preferences accommodated.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🪂</div><div><div class="incl-name">Paragliding Flight</div><div class="incl-desc">Tandem paragliding from Billing (8,300 ft). Safety briefing & certified instructors.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🧘</div><div><div class="incl-name">Daily Yoga & Wellness</div><div class="incl-desc">Morning yoga, guided meditation, sound healing, and breathwork every day.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🚐</div><div><div class="incl-name">All Local Transfers</div><div class="incl-desc">Transportation for all activities, excursions, and experiences within the program.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🧭</div><div><div class="incl-name">Expert Guides</div><div class="incl-desc">Local guides for all treks, monastery visits, and curated cultural experiences.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">📸</div><div><div class="incl-name">Photography Sessions</div><div class="incl-desc">Two dedicated photo sessions to capture your retreat memories beautifully.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🎁</div><div><div class="incl-name">WanderHer Welcome Kit</div><div class="incl-desc">Curated retreat kit with journal, essentials, and handcrafted local gifts.</div></div></div>
+    </div>
+    <p style="margin-top:1.75rem;text-align:center;font-size:0.78rem;color:var(--dim)">✦ Flights/train to Bir not included &nbsp;·&nbsp; Travel insurance recommended &nbsp;·&nbsp; Single occupancy upgrade available</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ GALLERY ═══════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem" class="fade-up">
+      <p class="sec-lbl">Visual Journal</p>
+      <h2 class="sec-title">A glimpse of <em>Bir</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="gal-grid fade-up">
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1687693656699-44f0e8f2afbc?auto=format&fit=crop&w=700&q=80" alt="Bir valley green landscape" loading="lazy"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1620720970374-5b7e67e1e610?auto=format&fit=crop&w=500&q=80" alt="Paragliding over mountains" loading="lazy"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1683195169345-c2038aec1e53?auto=format&fit=crop&w=500&q=80" alt="Tibetan monastery Bir Billing" loading="lazy"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=80" alt="Sunrise yoga silhouette mountains" loading="lazy"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1702374134718-3f2a04c7e441?auto=format&fit=crop&w=500&q=80" alt="Paraglider sunset over mountains" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+<section class="section" id="testimonials" style="background:rgba(13,22,40,0.4)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem" class="fade-up">
+      <p class="sec-lbl">Wanderer Stories</p>
+      <h2 class="sec-title">Words from women<br><em>who've been there</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="test-grid">
+      <div class="test-card fade-up">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">I came to Bir a little lost, and left knowing exactly who I am. The WanderHer team created something truly magical. The paragliding was incredible, but the real flight happened inside me.</p>
+        <div class="test-ava">
+          <img src="https://placehold.co/80x80/0d1628/5ab8d4?text=SA" alt="Simran A">
+          <div><div class="test-name">Simran Arora</div><div class="test-loc">Delhi · October 2024</div></div>
+        </div>
+      </div>
+      <div class="test-card fade-up" style="animation-delay:0.1s">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Every detail was thought through. From the cozy stay to sunrise yoga overlooking the mountains — I've never felt more at peace. Already thinking about the next trip with WanderHer.</p>
+        <div class="test-ava">
+          <img src="https://placehold.co/80x80/0d1628/5ab8d4?text=PK" alt="Priya K">
+          <div><div class="test-name">Priya Kapoor</div><div class="test-loc">Mumbai · October 2024</div></div>
+        </div>
+      </div>
+      <div class="test-card fade-up" style="animation-delay:0.2s">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Solo travel had always scared me. WanderHer made it feel like traveling with old friends. The monastery walk, the bonfire nights, the cooking class — a lifetime of memories in just 5 days.</p>
+        <div class="test-ava">
+          <img src="https://placehold.co/80x80/0d1628/5ab8d4?text=RM" alt="Ruchi M">
+          <div><div class="test-name">Ruchi Mehta</div><div class="test-loc">Bengaluru · October 2024</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ REGISTER FORM ═══════════════════════ -->
+<section class="section" id="register">
+  <div class="container">
+    <div style="max-width:900px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:3rem" class="fade-up">
+        <p class="sec-lbl">Express Interest</p>
+        <h2 class="sec-title">Claim your spot in<br><em>the mountains</em></h2>
+        <div class="divider"></div>
+        <p style="color:var(--muted);font-size:0.88rem;margin-top:0.5rem">Only 20 spots available. Fill in your details and we'll confirm your place within 24 hours.</p>
+      </div>
+
+      <div class="form-card fade-up" id="regCard">
+        <form id="regForm" onsubmit="handleRegister(event)">
+          <div class="fg">
+            <div class="fgroup">
+              <label class="flabel">Full Name *</label>
+              <input type="text" class="finput" placeholder="Your full name" required>
+            </div>
+            <div class="fgroup">
+              <label class="flabel">Email Address *</label>
+              <input type="email" class="finput" placeholder="you@email.com" required>
+            </div>
+            <div class="fgroup">
+              <label class="flabel">Phone Number *</label>
+              <input type="tel" class="finput" placeholder="+91 98765 43210" required>
+            </div>
+            <div class="fgroup">
+              <label class="flabel">City / Location</label>
+              <input type="text" class="finput" placeholder="Where are you based?">
+            </div>
+            <div class="fgroup">
+              <label class="flabel">Age Range</label>
+              <select class="finput fselect">
+                <option value="" disabled selected>Select your age range</option>
+                <option>18 – 24</option>
+                <option>25 – 30</option>
+                <option>31 – 40</option>
+                <option>41 – 50</option>
+                <option>50+</option>
+              </select>
+            </div>
+            <div class="fgroup">
+              <label class="flabel">Dietary Preference</label>
+              <select class="finput fselect">
+                <option value="" disabled selected>Select preference</option>
+                <option>Vegetarian</option>
+                <option>Vegan</option>
+                <option>Non-Vegetarian</option>
+                <option>Jain</option>
+                <option>Gluten-Free</option>
+              </select>
+            </div>
+            <div class="fgroup">
+              <label class="flabel">Room Preference</label>
+              <select class="finput fselect">
+                <option value="" disabled selected>Select preference</option>
+                <option>Twin Sharing (Standard)</option>
+                <option>Single Occupancy (+₹8,000)</option>
+              </select>
+            </div>
+            <div class="fgroup">
+              <label class="flabel">Emergency Contact</label>
+              <input type="tel" class="finput" placeholder="Emergency contact number">
+            </div>
+            <div class="fgroup fg-full">
+              <label class="flabel">Tell us about yourself (optional)</label>
+              <textarea class="finput ftextarea" placeholder="What brings you to this retreat? Any health conditions we should know about?"></textarea>
+            </div>
+            <div class="fgroup fg-full">
+              <label class="fcheck">
+                <input type="checkbox" required>
+                <span class="fcheck-lbl">I agree to the WanderHer terms & cancellation policy. I understand that 50% of the total amount is non-refundable if cancelled within 30 days of departure.</span>
+              </label>
+            </div>
+          </div>
+          <div style="margin-top:2rem;text-align:center">
+            <button type="submit" class="btn-sky" style="font-size:0.96rem;padding:1rem 3rem">
+              Submit Registration →
+            </button>
+          </div>
+        </form>
+        <div class="success-screen" id="regSuccess">
+          <div class="check-circle">✓</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:0.75rem">You're on the list! ✦</h3>
+          <p style="color:var(--muted);font-size:0.9rem;line-height:1.75">We'll reach out within 24 hours to confirm your spot. Scroll down to complete your booking with payment now.</p>
+          <a href="#payment" class="btn-sky" style="margin-top:1.5rem;display:inline-flex">Complete Booking →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PAYMENT ═══════════════════════ -->
+<section class="section" id="payment" style="background:rgba(13,22,40,0.4)">
+  <div class="container">
+    <div style="max-width:1000px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:3rem" class="fade-up">
+        <p class="sec-lbl">Complete Your Booking</p>
+        <h2 class="sec-title">Choose your package &amp;<br><em>secure your spot</em></h2>
+        <div class="divider"></div>
+      </div>
+
+      <div class="pay-card fade-up">
+        <!-- Packages -->
+        <p class="sec-lbl" style="margin-bottom:1rem">Select Your Package</p>
+        <div class="pkg-grid" id="pkgGrid">
+          <div class="pkg-item" onclick="selectPkg(this,'35,999','Shared Room · Twin')">
+            <div class="pkg-label">Shared · Twin Room</div>
+            <div class="pkg-price">₹35,999</div>
+            <div class="pkg-per">per person</div>
+            <ul class="pkg-feats">
+              <li>5 Days / 4 Nights</li>
+              <li>Twin sharing room</li>
+              <li>All meals included</li>
+              <li>All experiences</li>
+              <li>WanderHer welcome kit</li>
+            </ul>
+          </div>
+          <div class="pkg-item active" onclick="selectPkg(this,'43,999','Single Room · Solo')">
+            <div class="pkg-badge">Most Popular</div>
+            <div class="pkg-label">Solo · Private Room</div>
+            <div class="pkg-price">₹43,999</div>
+            <div class="pkg-per">per person</div>
+            <ul class="pkg-feats">
+              <li>5 Days / 4 Nights</li>
+              <li>Private single room</li>
+              <li>All meals included</li>
+              <li>All experiences</li>
+              <li>Priority activity slots</li>
+              <li>WanderHer welcome kit</li>
+            </ul>
+          </div>
+          <div class="pkg-item" onclick="selectPkg(this,'79,999','Duo · Bring a Friend')">
+            <div class="pkg-label">Duo · Bring a Friend</div>
+            <div class="pkg-price">₹79,999</div>
+            <div class="pkg-per">for 2 people (save ₹7,999)</div>
+            <ul class="pkg-feats">
+              <li>5 Days / 4 Nights each</li>
+              <li>Shared room for 2</li>
+              <li>All meals included</li>
+              <li>All experiences</li>
+              <li>Special duo photo session</li>
+              <li>2× WanderHer welcome kits</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Total -->
+        <div class="pay-total">
+          <div>
+            <div class="pay-total-lbl">Total Amount</div>
+            <div class="pay-total-sub" id="pkgSubline">Solo · Private Room · 1 traveler</div>
+          </div>
+          <div class="pay-total-amt" id="payAmt">₹43,999</div>
+        </div>
+
+        <!-- Payment method -->
+        <p class="sec-lbl" style="margin-bottom:1rem">Payment Method</p>
+        <div class="pay-tabs">
+          <button class="pay-tab active" onclick="switchTab('card',this)">💳 Card</button>
+          <button class="pay-tab" onclick="switchTab('upi',this)">📱 UPI / Net Banking</button>
+        </div>
+
+        <!-- Card form -->
+        <div class="card-panel show" id="cardPanel">
+          <div class="cc-preview">
+            <div class="cc-chip"></div>
+            <div class="cc-num" id="ccNum">•••• &nbsp;•••• &nbsp;•••• &nbsp;••••</div>
+            <div class="cc-row">
+              <div>
+                <div class="cc-lbl">Card Holder</div>
+                <div class="cc-val" id="ccHolder">YOUR NAME</div>
+              </div>
+              <div>
+                <div class="cc-lbl">Expires</div>
+                <div class="cc-val" id="ccExp">MM/YY</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(238,244,250,0.55);font-style:italic">WanderHer</div>
+              </div>
+            </div>
+          </div>
+          <div class="fg">
+            <div class="fgroup fg-full">
+              <label class="flabel">Name on Card</label>
+              <input type="text" class="finput" placeholder="As it appears on card" oninput="document.getElementById('ccHolder').textContent=this.value.toUpperCase()||'YOUR NAME'">
+            </div>
+            <div class="fgroup fg-full">
+              <label class="flabel">Card Number</label>
+              <input type="text" class="finput" placeholder="1234 5678 9012 3456" maxlength="19" oninput="fmtCard(this)">
+            </div>
+            <div class="fgroup">
+              <label class="flabel">Expiry Date</label>
+              <input type="text" class="finput" placeholder="MM / YY" maxlength="7" oninput="fmtExp(this)">
+            </div>
+            <div class="fgroup">
+              <label class="flabel">CVV</label>
+              <input type="password" class="finput" placeholder="•••" maxlength="4">
+            </div>
+          </div>
+        </div>
+
+        <!-- UPI form -->
+        <div class="upi-panel" id="upiPanel">
+          <div class="upi-opts">
+            <div class="upi-opt"><div class="upi-logo" style="background:#5f259f;color:#fff">G</div><span class="upi-name">Google Pay</span></div>
+            <div class="upi-opt"><div class="upi-logo" style="background:#002970;color:#fff">P</div><span class="upi-name">PhonePe</span></div>
+            <div class="upi-opt"><div class="upi-logo" style="background:#00baf2;color:#fff">P</div><span class="upi-name">Paytm</span></div>
+            <div class="upi-opt"><div class="upi-logo" style="background:#ff6200;color:#fff">B</div><span class="upi-name">BHIM UPI</span></div>
+          </div>
+          <div class="fgroup" style="max-width:400px">
+            <label class="flabel">Or enter UPI ID</label>
+            <input type="text" class="finput" placeholder="yourname@upi">
+          </div>
+        </div>
+
+        <!-- Pay button -->
+        <div style="margin-top:2.25rem;display:flex;flex-direction:column;align-items:center;gap:1rem">
+          <button onclick="handlePayment()" class="btn-sky" style="font-size:0.96rem;padding:1rem 3.5rem;width:100%;max-width:420px;border:none;justify-content:center">
+            🔒 Pay Securely
+          </button>
+          <p style="font-size:0.72rem;color:var(--dim);text-align:center">256-bit SSL encryption · Secured by Razorpay · By paying you agree to our terms &amp; cancellation policy</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FAQ ═══════════════════════ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div style="max-width:780px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:3rem" class="fade-up">
+        <p class="sec-lbl">Questions</p>
+        <h2 class="sec-title">Frequently <em>asked</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-list fade-up">
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">Is this retreat only for experienced travelers?</span><span class="faq-chev">▾</span></div><div class="faq-a"><div class="faq-a-in">Not at all! This retreat is designed for all women — whether you're a seasoned solo traveler or it's your very first adventure. Our team handles everything so you can just show up and enjoy the experience fully.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">How do I get to Bir?</span><span class="faq-chev">▾</span></div><div class="faq-a"><div class="faq-a-in">The nearest airport is Gaggal (Kangra Airport, IXH), about 65 km from Bir. You can also take a train to Pathankot or Chakki Bank and drive to Bir (~2.5 hrs). Once you arrive in Bir, we handle all local transfers. We'll share a detailed travel guide post-booking.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">What is the cancellation policy?</span><span class="faq-chev">▾</span></div><div class="faq-a"><div class="faq-a-in">Cancellations 45+ days before departure: 100% refund. 30–45 days: 50% refund. Within 30 days: non-refundable, but you may transfer your spot to another eligible traveler. We strongly recommend purchasing travel insurance.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">Is paragliding mandatory?</span><span class="faq-chev">▾</span></div><div class="faq-a"><div class="faq-a-in">Absolutely not! Paragliding is included but entirely optional. Those who prefer to stay on the ground can explore the Billing launch site area, watch flights, and join the group for the rest of the day's activities — no pressure whatsoever.</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">What should I pack?</span><span class="faq-chev">▾</span></div><div class="faq-a"><div class="faq-a-in">We'll send a comprehensive packing list after booking. Essentials include warm layers for chilly evenings, good trekking shoes, sunscreen, and your adventurous spirit. Bir in September–November is mild (10–22°C during the day, 5–10°C at night).</div></div></div>
+        <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">Can I book as part of a group?</span><span class="faq-chev">▾</span></div><div class="faq-a"><div class="faq-a-in">Yes! We have the Duo package for groups of 2. For larger groups of 3+, reach out to us at hello@wanderher.in and we'll create a custom package for your crew.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-g">
+      <div class="footer-logo">
+        <img src="assets/logo.jpeg" alt="WanderHer">
+        <p class="footer-desc">WanderHer creates transformative travel experiences for women — where adventure meets community, and every journey leads to a deeper understanding of yourself.</p>
+        <div class="socials" style="margin-top:1.5rem">
+          <a href="#" class="social-btn">📷</a>
+          <a href="#" class="social-btn">✦</a>
+          <a href="#" class="social-btn">▶</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Explore</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rishikesh-retreat.html">Rishikesh Retreat</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Bir Retreat</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Bir</a></li>
+          <li><a href="#experiences">Experiences</a></li>
+          <li><a href="#itinerary">Itinerary</a></li>
+          <li><a href="#register">Register</a></li>
+          <li><a href="#payment">Book Now</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:hello@wanderher.in">hello@wanderher.in</a></li>
+          <li><a href="#">+91 98765 43210</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">WhatsApp Group</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 WanderHer. All rights reserved. Made with ♡ for women who wander.</p>
+      <p>Privacy Policy &nbsp;·&nbsp; Terms &nbsp;·&nbsp; Refund Policy</p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<script src="shared.js"></script>
+<script>
+// ── Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.05 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+// Fallback: ensure all content visible after 250ms (handles full-page screenshots)
+setTimeout(() => {
+  document.querySelectorAll('.fade-up').forEach(el => el.classList.add('in'));
+}, 250);
+
+// Sticky nav handled by shared.js
+
+// ── Itinerary accordion
+function toggleDay(el) {
+  const wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.day-item').forEach(d => d.classList.remove('open'));
+  if (!wasOpen) el.classList.add('open');
+}
+
+// ── FAQ accordion
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(d => d.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ── Package selection
+function selectPkg(card, price, name) {
+  document.querySelectorAll('.pkg-item').forEach(c => c.classList.remove('active'));
+  card.classList.add('active');
+  document.getElementById('payAmt').textContent = '₹' + price;
+  document.getElementById('pkgSubline').textContent = name + ' · 1 traveler';
+}
+
+// ── Payment tabs
+function switchTab(type, btn) {
+  document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('cardPanel').classList.toggle('show', type === 'card');
+  document.getElementById('upiPanel').classList.toggle('show', type === 'upi');
+}
+
+// ── Card formatting
+function fmtCard(input) {
+  let v = input.value.replace(/\D/g,'').slice(0,16);
+  input.value = (v.match(/.{1,4}/g)||[v]).join(' ');
+  let disp = v.padEnd(16,'•').match(/.{1,4}/g).join('  ');
+  document.getElementById('ccNum').textContent = disp;
+}
+function fmtExp(input) {
+  let v = input.value.replace(/\D/g,'').slice(0,4);
+  if (v.length >= 3) v = v.slice(0,2) + ' / ' + v.slice(2);
+  input.value = v;
+  document.getElementById('ccExp').textContent = v || 'MM/YY';
+}
+
+// ── Register form
+function handleRegister(e) {
+  e.preventDefault();
+  document.getElementById('regForm').style.display = 'none';
+  document.getElementById('regSuccess').style.display = 'block';
+  toast('🎉 Registration received! We\'ll confirm your spot within 24 hours.');
+  setTimeout(() => document.getElementById('payment').scrollIntoView({ behavior:'smooth' }), 2200);
+}
+
+// ── Payment
+function handlePayment() {
+  toast('🔒 Processing… Integrate your payment gateway (e.g. Razorpay) here.');
+}
+
+// ── Toast helper
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4200);
+}
+
+// ── Init
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.day-item').classList.add('open');
+});
+</script>
+</body>
+</html>

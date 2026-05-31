@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WanderHer — Rishikesh River Retreat 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,600&family=Dancing+Script:wght@600;700&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* ── HERO ─────────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh; position: relative;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; padding: 10rem 2rem 18rem; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 65% 45% at 50% -5%, rgba(90,184,212,0.2) 0%, transparent 65%),
+    radial-gradient(ellipse 120% 50% at 0% 100%, rgba(6,18,36,0.98) 0%, transparent 55%),
+    linear-gradient(175deg, #04080e 0%, #061018 55%, #0a1c32 100%);
+}
+.hero-stars {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 18% 12%, rgba(196,232,245,0.9) 0, transparent 0),
+    radial-gradient(1px 1px at 40% 8%, rgba(196,232,245,0.6) 0, transparent 0),
+    radial-gradient(2px 2px at 65% 6%, rgba(196,232,245,0.8) 0, transparent 0),
+    radial-gradient(1px 1px at 80% 20%, rgba(196,232,245,0.5) 0, transparent 0),
+    radial-gradient(1.5px 1.5px at 8% 28%, rgba(196,232,245,0.7) 0, transparent 0),
+    radial-gradient(1px 1px at 52% 4%, rgba(196,232,245,0.95) 0, transparent 0),
+    radial-gradient(1px 1px at 92% 10%, rgba(196,232,245,0.5) 0, transparent 0),
+    radial-gradient(1.5px 1.5px at 28% 22%, rgba(196,232,245,0.45) 0, transparent 0);
+}
+/* River wave at bottom */
+.hero-wave { position: absolute; bottom: 0; left: 0; right: 0; z-index: 1; }
+.hero-dove { width: 88px; height: 88px; border-radius: 50%; margin-bottom: 2.25rem; position: relative; border: 1.5px solid rgba(90,184,212,0.3); box-shadow: 0 0 40px rgba(90,184,212,0.25), 0 0 80px rgba(90,184,212,0.1); animation: float 5s ease-in-out infinite; }
+.hero-eyebrow { position: relative; display: inline-flex; align-items: center; gap: 0.6rem; background: rgba(90,184,212,0.07); border: 1px solid rgba(90,184,212,0.22); padding: 0.4rem 1.3rem; border-radius: 100px; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sky-light); margin-bottom: 1.75rem; }
+.hero-eyebrow::before, .hero-eyebrow::after { content: ''; width: 4px; height: 4px; background: var(--sky); border-radius: 50%; flex-shrink: 0; }
+.hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 8vw, 7.5rem); font-weight: 300; line-height: 1.04; letter-spacing: -0.025em; color: var(--snow); position: relative; margin-bottom: 1.5rem; }
+.hero-title em { font-style: italic; color: var(--sky-light); display: block; }
+.hero-sub { max-width: 520px; color: var(--muted); font-size: 1rem; line-height: 1.85; margin-bottom: 2.75rem; position: relative; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; position: relative; }
+.hero-stats { position: absolute; bottom: 6.5rem; left: 50%; transform: translateX(-50%); display: flex; gap: 4rem; z-index: 2; }
+.h-stat { text-align: center; }
+.h-stat .num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--sky-light); display: block; }
+.h-stat .lbl { font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); }
+.hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 0.5rem; z-index: 2; }
+.hero-scroll span { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--dim); }
+.scroll-line { width: 1px; height: 38px; background: linear-gradient(to bottom, var(--dim), transparent); animation: pulse 2.2s ease-in-out infinite; }
+
+/* ── ABOUT SECTION ─────────────────────────────────────────────────── */
+.about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center; }
+.about-img { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 3/4; }
+.about-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-img::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(135deg, rgba(90,184,212,0.18) 0%, transparent 55%), linear-gradient(to bottom, transparent 50%, rgba(6,8,16,0.75) 100%); }
+.about-img-foot { position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; z-index: 2; background: rgba(9,14,26,0.82); backdrop-filter: blur(14px); border: 1px solid rgba(90,184,212,0.14); border-radius: 12px; padding: 1rem 1.25rem; display: flex; gap: 1.5rem; }
+.img-foot-item .lbl { font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
+.img-foot-item .val { font-size: 0.88rem; font-weight: 500; }
+.about-pills { display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1.75rem; }
+.about-pill { display: flex; gap: 1rem; align-items: flex-start; padding: 1.2rem; background: rgba(17,30,56,0.85); border: 1px solid rgba(90,184,212,0.16); border-radius: 12px; transition: all 0.3s; }
+.about-pill:hover { border-color: rgba(90,184,212,0.3); background: rgba(20,36,66,0.95); }
+.pill-icon { width: 40px; height: 40px; background: rgba(90,184,212,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+.pill-title { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.2rem; }
+.pill-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
+
+/* ── EXPERIENCE CARDS ─────────────────────────────────────────────── */
+.exp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
+.exp-card { background: var(--surface); border: 1px solid rgba(90,184,212,0.15); border-radius: 16px; overflow: hidden; transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94); cursor: pointer; }
+.exp-card:hover { border-color: rgba(90,184,212,0.32); transform: translateY(-5px); box-shadow: 0 24px 60px rgba(0,0,0,0.5); }
+.exp-img { position: relative; height: 195px; overflow: hidden; }
+.exp-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display: block; }
+.exp-card:hover .exp-img img { transform: scale(1.06); }
+.exp-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(6,8,16,0.1) 0%, rgba(6,8,16,0.65) 100%); }
+.exp-tag { position: absolute; top: 0.9rem; left: 0.9rem; z-index: 1; background: rgba(6,8,16,0.72); backdrop-filter: blur(8px); border: 1px solid rgba(90,184,212,0.22); padding: 0.22rem 0.7rem; border-radius: 100px; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sky-light); }
+.exp-body { padding: 1.4rem; }
+.exp-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; margin-bottom: 0.45rem; color: var(--snow); }
+.exp-desc { color: var(--muted); font-size: 0.84rem; line-height: 1.7; }
+
+/* ── ITINERARY ─────────────────────────────────────────────────────── */
+.itin-wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4.5rem; align-items: start; }
+.day-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.day-item { background: var(--surface); border: 1px solid var(--border); border-left: 2px solid var(--sky); border-radius: 0 13px 13px 0; overflow: hidden; }
+.day-head { display: flex; align-items: center; gap: 1.4rem; padding: 1.35rem 1.75rem; cursor: pointer; transition: background 0.3s; }
+.day-head:hover { background: rgba(90,184,212,0.04); }
+.day-n { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--dim); line-height: 1; min-width: 44px; transition: color 0.3s; }
+.day-item.open .day-n { color: var(--sky-light); }
+.day-meta { flex: 1; }
+.day-title { font-size: 1rem; font-weight: 500; margin-bottom: 0.18rem; }
+.day-sub { font-size: 0.78rem; color: var(--muted); }
+.day-chev { width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 0.65rem; flex-shrink: 0; transition: all 0.3s; }
+.day-item.open .day-chev { background: var(--sky); border-color: var(--sky); color: var(--void); transform: rotate(180deg); }
+.day-body { max-height: 0; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.25,0.46,0.45,0.94); }
+.day-item.open .day-body { max-height: 420px; }
+.day-acts { padding: 0 1.75rem 1.35rem; display: flex; flex-direction: column; gap: 0.7rem; }
+.day-act { display: flex; gap: 1rem; align-items: flex-start; }
+.act-time { font-size: 0.72rem; color: var(--sky); letter-spacing: 0.07em; min-width: 68px; padding-top: 0.1rem; }
+.act-text { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+/* ── INCLUDED ─────────────────────────────────────────────────────── */
+.incl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.incl-card { display: flex; gap: 1rem; align-items: flex-start; padding: 1.2rem; background: var(--surface); border: 1px solid rgba(90,184,212,0.15); border-radius: 12px; transition: all 0.3s; }
+.incl-card:hover { border-color: rgba(90,184,212,0.28); }
+.incl-icon { width: 38px; height: 38px; background: rgba(90,184,212,0.1); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.incl-name { font-size: 0.88rem; font-weight: 500; margin-bottom: 0.22rem; }
+.incl-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+/* ── GALLERY ─────────────────────────────────────────────────────── */
+.gal-grid { display: grid; grid-template-columns: 1.45fr 1fr 1fr; grid-template-rows: 250px 250px; gap: 1rem; }
+.gal-item { border-radius: 14px; overflow: hidden; position: relative; }
+.gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; display: block; }
+.gal-item:hover img { transform: scale(1.06); }
+.gal-item:first-child { grid-row: 1 / 3; }
+.gal-item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 45%, rgba(6,8,16,0.55) 100%); opacity: 0; transition: opacity 0.35s; }
+.gal-item:hover::after { opacity: 1; }
+
+/* ── PAYMENT ─────────────────────────────────────────────────────── */
+.pay-card { background: var(--surface); border: 1px solid rgba(90,184,212,0.18); border-radius: 20px; padding: 3rem; }
+.pkg-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 2.25rem; }
+.pkg-item { background: var(--elevated); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; cursor: pointer; transition: all 0.3s; position: relative; font-family: 'Nunito', sans-serif; }
+.pkg-item.active { border-color: var(--sky); background: rgba(90,184,212,0.07); }
+.pkg-item:hover { border-color: rgba(90,184,212,0.3); }
+.pkg-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--void); padding: 0.18rem 0.8rem; border-radius: 100px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; white-space: nowrap; }
+.pkg-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+.pkg-price { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--snow); }
+.pkg-per { font-size: 0.72rem; color: var(--muted); margin-bottom: 0.75rem; }
+.pkg-feats { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+.pkg-feats li { font-size: 0.76rem; color: var(--muted); display: flex; gap: 0.4rem; }
+.pkg-feats li::before { content: '✓'; color: var(--sky); font-size: 0.68rem; flex-shrink: 0; padding-top: 0.1rem; }
+
+.pay-total { background: rgba(90,184,212,0.06); border: 1px solid rgba(90,184,212,0.12); border-radius: 12px; padding: 1.2rem 1.5rem; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.pay-total-lbl { font-size: 0.8rem; color: var(--muted); }
+.pay-total-sub { font-size: 0.72rem; color: var(--dim); margin-top: 0.1rem; }
+.pay-total-amt { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--sky-light); }
+.pay-tabs { display: inline-flex; gap: 0.4rem; padding: 0.3rem; background: rgba(90,184,212,0.05); border-radius: 100px; margin-bottom: 2rem; }
+.pay-tab { padding: 0.5rem 1.4rem; border-radius: 100px; font-size: 0.8rem; cursor: pointer; transition: all 0.3s; border: none; background: transparent; color: var(--muted); font-family: 'Nunito', sans-serif; }
+.pay-tab.active { background: var(--sky); color: var(--void); font-weight: 700; }
+.cc-preview { background: linear-gradient(135deg, rgba(90,184,212,0.18), rgba(18,32,58,0.92)); border: 1px solid rgba(90,184,212,0.2); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; position: relative; overflow: hidden; min-height: 168px; }
+.cc-chip { width: 34px; height: 24px; border-radius: 5px; background: linear-gradient(135deg, #f3a336, #d4891e); margin-bottom: 1.75rem; }
+.cc-num { font-family: 'Courier New', monospace; font-size: 1.1rem; letter-spacing: 0.2em; color: rgba(238,244,250,0.8); margin-bottom: 1.4rem; }
+.cc-row { display: flex; justify-content: space-between; }
+.cc-lbl { font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem; }
+.cc-val { font-size: 0.8rem; color: var(--snow); }
+
+/* ── FAQ ─────────────────────────────────────────────────────────── */
+.faq-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.faq-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.faq-q { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 1.5rem; cursor: pointer; transition: background 0.3s; }
+.faq-q:hover { background: rgba(90,184,212,0.04); }
+.faq-q-txt { font-size: 0.94rem; font-weight: 400; }
+.faq-chev { font-size: 0.65rem; color: var(--muted); transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-chev { transform: rotate(180deg); color: var(--sky); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
+.faq-item.open .faq-a { max-height: 280px; }
+.faq-a-in { padding: 0 1.5rem 1.2rem; font-size: 0.86rem; color: var(--muted); line-height: 1.78; }
+
+/* success */
+.success-screen { display: none; text-align: center; padding: 2.5rem 2rem; }
+.check-circle { width: 72px; height: 72px; background: rgba(90,184,212,0.1); border: 2px solid var(--sky); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; font-size: 1.75rem; }
+.fg { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+.fg-full { grid-column: 1 / -1; }
+
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .about-img { aspect-ratio: 16/9; }
+  .exp-grid { grid-template-columns: 1fr 1fr; }
+  .itin-wrap { grid-template-columns: 1fr; }
+  .incl-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .hero-stats { gap: 2rem; flex-wrap: wrap; justify-content: center; bottom: 4.5rem; }
+  .h-stat .num { font-size: 2rem; }
+  .exp-grid { grid-template-columns: 1fr; }
+  .fg { grid-template-columns: 1fr; }
+  .pkg-grid { grid-template-columns: 1fr; }
+  .gal-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .gal-item:first-child { grid-row: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-brand">
+    <img src="assets/logo.jpeg" alt="WanderHer">
+    <span class="nav-brand-name">WanderHer</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Retreats <span class="chev">▾</span></a>
+      <ul class="dropdown">
+        <li><a href="bir-retreat.html">🏔️ Bir, Himachal Pradesh</a></li>
+        <li><a href="rishikesh-retreat.html" class="active">🌊 Rishikesh, Uttarakhand</a></li>
+      </ul>
+    </li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="#register" class="nav-cta">Reserve My Spot</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-stars"></div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 220 Q180 160 360 190 Q540 220 720 170 Q900 120 1080 165 Q1260 210 1440 155 L1440 220 Z" fill="#04080e" opacity="0.97"/>
+      <path d="M0 220 Q200 190 400 210 Q600 230 800 200 Q1000 170 1200 205 Q1400 240 1440 210 L1440 220 Z" fill="#061018" opacity="0.95"/>
+    </svg>
+  </div>
+  <img src="assets/logo.jpeg" alt="WanderHer" class="hero-dove">
+  <div class="hero-eyebrow">Rishikesh, Uttarakhand &nbsp;·&nbsp; October 2025</div>
+  <h1 class="hero-title">
+    Find your flow<br>
+    <em>in Rishikesh.</em>
+  </h1>
+  <p class="hero-sub">4 transformative days on the sacred banks of the Ganga — where ancient yoga meets wild river adventures, and the mountains remind you to breathe.</p>
+  <div class="hero-actions">
+    <a href="#register" class="btn-sky">✦ Reserve My Spot</a>
+    <a href="#about" class="btn-ghost">Explore the Retreat ↓</a>
+  </div>
+  <div class="hero-stats">
+    <div class="h-stat"><span class="num">4</span><div class="lbl">Days & Nights</div></div>
+    <div class="h-stat"><span class="num">20</span><div class="lbl">Limited Spots</div></div>
+    <div class="h-stat"><span class="num">340m</span><div class="lbl">Above Sea Level</div></div>
+    <div class="h-stat"><span class="num">100%</span><div class="lbl">Women-Only</div></div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+</section>
+
+<!-- ABOUT RISHIKESH -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img fade-up">
+        <img src="https://images.unsplash.com/photo-1712510817140-917938f92e5b?auto=format&fit=crop&w=600&q=80" alt="Rishikesh river valley">
+        <div class="about-img-foot">
+          <div class="img-foot-item"><div class="lbl">Location</div><div class="val">Rishikesh, UK</div></div>
+          <div class="img-foot-item"><div class="lbl">Elevation</div><div class="val">~340m</div></div>
+          <div class="img-foot-item"><div class="lbl">Best Season</div><div class="val">Oct – Nov</div></div>
+        </div>
+      </div>
+      <div class="fade-up" style="animation-delay:0.1s">
+        <p class="sec-lbl">About the Retreat</p>
+        <h2 class="sec-title" style="margin-bottom:1.4rem">Rishikesh. Where the<br>Ganga <em>heals the soul.</em></h2>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:1.35rem;font-size:0.94rem">Nestled in the Himalayan foothills of Uttarakhand, Rishikesh is the yoga capital of the world — a sacred confluence of spirituality, adventure, and raw natural beauty.</p>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:2rem;font-size:0.94rem">WanderHer brings 20 women together for 4 days of morning yoga on the Ganges, white-water rafting, the ethereal Ganga Aarti, forest walks, and the kind of stillness you can only find by a sacred river.</p>
+        <div class="about-pills">
+          <div class="about-pill">
+            <div class="pill-icon">🕉️</div>
+            <div><div class="pill-title">Yoga Capital of the World</div><div class="pill-desc">Practice on the banks of the Ganga with the Himalayas as your backdrop — nothing comes close.</div></div>
+          </div>
+          <div class="about-pill">
+            <div class="pill-icon">🌊</div>
+            <div><div class="pill-title">Adventure & Adrenaline</div><div class="pill-desc">Grade 3–4 white-water rapids on the Ganges, plus cliff jumping and kayaking options.</div></div>
+          </div>
+          <div class="about-pill">
+            <div class="pill-icon">🪔</div>
+            <div><div class="pill-title">Sacred & Spiritual</div><div class="pill-desc">Experience the ancient Ganga Aarti fire ceremony at Parmarth Niketan — deeply moving.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section class="section section-alt" id="experiences">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem">
+      <p class="sec-lbl">What You'll Do</p>
+      <h2 class="sec-title">Experiences for the<br><em>wandering soul</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="exp-grid">
+      <div class="exp-card fade-up">
+        <div class="exp-img">
+          <img src="https://images.unsplash.com/photo-1524863479829-916d8e77f114?auto=format&fit=crop&w=700&h=300&q=80" alt="Sunrise yoga Ganges" loading="lazy">
+          <span class="exp-tag">Wellness</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-name">Morning Ganga Yoga</h3>
+          <p class="exp-desc">Wake before the sun and practice yoga on the ghats as the Ganga catches the first golden light. Nothing resets you like this.</p>
+        </div>
+      </div>
+      <div class="exp-card fade-up" style="animation-delay:0.08s">
+        <div class="exp-img">
+          <img src="https://images.unsplash.com/photo-1718383537411-6f9e727ae0bb?auto=format&fit=crop&w=700&h=300&q=80" alt="White water rafting Rishikesh" loading="lazy">
+          <span class="exp-tag">Adventure</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-name">White Water Rafting</h3>
+          <p class="exp-desc">Tackle Grade 3–4 rapids on the sacred Ganges. Heart-pounding, breath-taking, and totally unforgettable — trust us.</p>
+        </div>
+      </div>
+      <div class="exp-card fade-up" style="animation-delay:0.16s">
+        <div class="exp-img">
+          <img src="https://images.unsplash.com/photo-1716573260891-23ad993e8833?auto=format&fit=crop&w=700&h=300&q=80" alt="Ganga Aarti fire ceremony" loading="lazy">
+          <span class="exp-tag">Spiritual</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-name">Ganga Aarti Ceremony</h3>
+          <p class="exp-desc">Watch the ancient fire ceremony at Parmarth Niketan as thousands of lamps float down the sacred river. A deeply moving experience.</p>
+        </div>
+      </div>
+      <div class="exp-card fade-up" style="animation-delay:0.08s">
+        <div class="exp-img">
+          <img src="https://images.unsplash.com/photo-1624807136278-e2973be118ff?auto=format&fit=crop&w=700&h=300&q=80" alt="Forest meditation walk" loading="lazy">
+          <span class="exp-tag">Nature</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-name">Forest Meditation Walk</h3>
+          <p class="exp-desc">Trek through the lush green forest paths bordering the Ganges. Guided meditation in nature, with birdsong as your soundtrack.</p>
+        </div>
+      </div>
+      <div class="exp-card fade-up" style="animation-delay:0.16s">
+        <div class="exp-img">
+          <img src="https://images.unsplash.com/photo-1720819029162-8500607ae232?auto=format&fit=crop&w=700&h=300&q=80" alt="Laxman Jhula bridge Rishikesh" loading="lazy">
+          <span class="exp-tag">Culture</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-name">Laxman Jhula & Culture</h3>
+          <p class="exp-desc">Walk the iconic suspension bridge, explore the Beatles Ashram, and discover Rishikesh's legendary café culture in Tapovan.</p>
+        </div>
+      </div>
+      <div class="exp-card fade-up" style="animation-delay:0.24s">
+        <div class="exp-img">
+          <img src="https://images.unsplash.com/photo-1647999019630-dabe1a837693?auto=format&fit=crop&w=700&h=300&q=80" alt="Ayurvedic wellness treatment" loading="lazy">
+          <span class="exp-tag">Wellness</span>
+        </div>
+        <div class="exp-body">
+          <h3 class="exp-name">Ayurvedic Wellness</h3>
+          <p class="exp-desc">Traditional Abhyanga oil massage and Ayurvedic treatment session. Let ancient healing restore what modern life has taken.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ITINERARY -->
+<section class="section" id="itinerary">
+  <div class="container">
+    <div class="itin-wrap">
+      <div class="fade-up">
+        <p class="sec-lbl">Day by Day</p>
+        <h2 class="sec-title" style="margin-bottom:1rem">Four days to<br><em>find your flow</em></h2>
+        <div class="divider" style="margin:1.5rem 0 1.5rem 0"></div>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:2.25rem;font-size:0.9rem">A perfect blend of adventure and stillness. Every day by the Ganga is its own kind of extraordinary.</p>
+        <div style="display:flex;gap:2.5rem;flex-wrap:wrap">
+          <div style="text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--sky-light);font-weight:300">4</div><div style="font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">Days</div></div>
+          <div style="text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--sky-light);font-weight:300">10+</div><div style="font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">Experiences</div></div>
+          <div style="text-align:center"><div style="font-family:'Cormorant Garamond',serif;font-size:2.4rem;color:var(--sky-light);font-weight:300">20</div><div style="font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">Max Group</div></div>
+        </div>
+        <div style="margin-top:2.25rem;padding:1.5rem;background:rgba(90,184,212,0.06);border:1px solid rgba(90,184,212,0.14);border-radius:14px">
+          <p style="font-size:0.82rem;color:var(--muted);line-height:1.75">
+            <strong style="color:var(--sky-light);font-weight:500">Dates:</strong> October 10–13, 2025<br>
+            <strong style="color:var(--sky-light);font-weight:500">Nearest city:</strong> Haridwar (~25 km) or Dehradun (~45 km)<br>
+            <strong style="color:var(--sky-light);font-weight:500">By train:</strong> Haridwar Junction is the closest railhead
+          </p>
+        </div>
+      </div>
+      <div class="day-list fade-up" style="animation-delay:0.12s">
+        <div class="day-item" onclick="toggleDay(this)">
+          <div class="day-head"><span class="day-n">01</span><div class="day-meta"><div class="day-title">Arrival & Sacred Welcome</div><div class="day-sub">Check in · Ghat walk · Ganga Aarti</div></div><div class="day-chev">▾</div></div>
+          <div class="day-body"><div class="day-acts">
+            <div class="day-act"><span class="act-time">Afternoon</span><span class="act-text">Arrive in Rishikesh. Check in to your riverside accommodation. Unpack and breathe.</span></div>
+            <div class="day-act"><span class="act-time">4:30 PM</span><span class="act-text">Welcome tea & orientation circle on the rooftop terrace with Ganga views.</span></div>
+            <div class="day-act"><span class="act-time">6:00 PM</span><span class="act-text">Walk to the ghats along the river. Experience the evening energy of Rishikesh.</span></div>
+            <div class="day-act"><span class="act-time">6:45 PM</span><span class="act-text">Ganga Aarti at Parmarth Niketan — your first, unforgettable evening by the river.</span></div>
+            <div class="day-act"><span class="act-time">8:30 PM</span><span class="act-text">Welcome dinner at a riverside café. Get to know your fellow wanderers.</span></div>
+          </div></div>
+        </div>
+        <div class="day-item" onclick="toggleDay(this)">
+          <div class="day-head"><span class="day-n">02</span><div class="day-meta"><div class="day-title">The Sacred & the Wild</div><div class="day-sub">Ganga yoga · Rafting · Café culture</div></div><div class="day-chev">▾</div></div>
+          <div class="day-body"><div class="day-acts">
+            <div class="day-act"><span class="act-time">6:00 AM</span><span class="act-text">Sunrise yoga on the ghats. Breathwork and meditation as the Ganga wakes up.</span></div>
+            <div class="day-act"><span class="act-time">9:30 AM</span><span class="act-text">White-water rafting on the Ganges — Grade 3–4 rapids, 16 km stretch.</span></div>
+            <div class="day-act"><span class="act-time">1:00 PM</span><span class="act-text">Lunch at a Tapovan café. Explore the legendary bohemian café scene.</span></div>
+            <div class="day-act"><span class="act-time">4:00 PM</span><span class="act-text">Laxman Jhula walk and Beatles Ashram visit. Soak in the history and murals.</span></div>
+            <div class="day-act"><span class="act-time">Evening</span><span class="act-text">Free evening — explore Rishikesh at your own pace. Rooftop stargazing optional.</span></div>
+          </div></div>
+        </div>
+        <div class="day-item" onclick="toggleDay(this)">
+          <div class="day-head"><span class="day-n">03</span><div class="day-meta"><div class="day-title">Into the Forest</div><div class="day-sub">Forest walk · Ayurveda · Sound healing</div></div><div class="day-chev">▾</div></div>
+          <div class="day-body"><div class="day-acts">
+            <div class="day-act"><span class="act-time">7:00 AM</span><span class="act-text">Guided forest meditation walk. Breathe in pine and river air.</span></div>
+            <div class="day-act"><span class="act-time">11:00 AM</span><span class="act-text">Ayurvedic Abhyanga oil massage session at a traditional wellness centre.</span></div>
+            <div class="day-act"><span class="act-time">2:00 PM</span><span class="act-text">Traditional Indian cooking class — learn to make dal, sabzi, and chai from scratch.</span></div>
+            <div class="day-act"><span class="act-time">5:00 PM</span><span class="act-text">Sound healing with singing bowls and guided yoga nidra (yogic sleep).</span></div>
+            <div class="day-act"><span class="act-time">7:30 PM</span><span class="act-text">Bonfire dinner by the river. Sharing circle and open-mic stories.</span></div>
+          </div></div>
+        </div>
+        <div class="day-item" onclick="toggleDay(this)">
+          <div class="day-head"><span class="day-n">04</span><div class="day-meta"><div class="day-title">Flow & Farewell</div><div class="day-sub">Final yoga · Closing circle · Departure</div></div><div class="day-chev">▾</div></div>
+          <div class="day-body"><div class="day-acts">
+            <div class="day-act"><span class="act-time">Sunrise</span><span class="act-text">Final Ganga yoga at dawn. Set intentions to carry into everyday life.</span></div>
+            <div class="day-act"><span class="act-time">8:30 AM</span><span class="act-text">Closing gratitude circle. Share your biggest takeaway from the retreat.</span></div>
+            <div class="day-act"><span class="act-time">10:00 AM</span><span class="act-text">Farewell breakfast by the river. WanderHer gift exchange.</span></div>
+            <div class="day-act"><span class="act-time">Noon</span><span class="act-text">Departures. Carry the Ganga with you, always. ✦</span></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem">
+      <p class="sec-lbl">The Details</p>
+      <h2 class="sec-title">Everything included,<br><em>nothing to worry about.</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="incl-grid fade-up">
+      <div class="incl-card"><div class="incl-icon">🏡</div><div><div class="incl-name">Accommodation</div><div class="incl-desc">3 nights in a handpicked riverside retreat property with Ganga views.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🍽️</div><div><div class="incl-name">All Meals</div><div class="incl-desc">Breakfast, lunch, and dinner daily. Sattvic (yogic) and all dietary preferences accommodated.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🚣</div><div><div class="incl-name">White Water Rafting</div><div class="incl-desc">16 km Grade 3–4 rafting on the Ganges. Safety equipment and certified guides.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🧘</div><div><div class="incl-name">Daily Yoga & Wellness</div><div class="incl-desc">Sunrise yoga, breathwork, guided meditation, and yoga nidra session.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🚐</div><div><div class="incl-name">All Local Transfers</div><div class="incl-desc">Transportation for all activities, excursions, and experiences in the program.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🪔</div><div><div class="incl-name">Ganga Aarti Experience</div><div class="incl-desc">Guided participation in the sacred evening fire ceremony at Parmarth Niketan.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🌿</div><div><div class="incl-name">Ayurvedic Treatment</div><div class="incl-desc">One traditional Abhyanga oil massage session (60 minutes) per person.</div></div></div>
+      <div class="incl-card"><div class="incl-icon">🎁</div><div><div class="incl-name">WanderHer Welcome Kit</div><div class="incl-desc">Curated kit with journal, essentials, and handcrafted local gifts from Rishikesh.</div></div></div>
+    </div>
+    <p style="margin-top:1.75rem;text-align:center;font-size:0.78rem;color:var(--dim)">✦ Flights/train to Haridwar/Dehradun not included &nbsp;·&nbsp; Travel insurance recommended &nbsp;·&nbsp; Single occupancy upgrade available</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem">
+      <p class="sec-lbl">Visual Journal</p>
+      <h2 class="sec-title">A glimpse of <em>Rishikesh</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="gal-grid fade-up">
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1712510817140-917938f92e5b?auto=format&fit=crop&w=700&q=80" alt="Rishikesh valley panorama" loading="lazy"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1603867106100-0d2039fc8757?auto=format&fit=crop&w=500&q=80" alt="River rafting Rishikesh" loading="lazy"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1720819029162-8500607ae232?auto=format&fit=crop&w=500&q=80" alt="Laxman Jhula bridge" loading="lazy"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1716573260891-23ad993e8833?auto=format&fit=crop&w=500&q=80" alt="Ganga Aarti ceremony" loading="lazy"></div>
+      <div class="gal-item"><img src="https://images.unsplash.com/photo-1624807136278-e2973be118ff?auto=format&fit=crop&w=500&q=80" alt="Forest Ganges view" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-alt" id="testimonials">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem">
+      <p class="sec-lbl">Wanderer Stories</p>
+      <h2 class="sec-title">Words from women<br><em>who've been there</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem">
+      <div class="test-card fade-up">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">The Ganga Aarti on the first evening broke something open in me. I didn't expect to cry but the beauty of it — the fire, the water, the chanting — was overwhelming in the best way.</p>
+        <div class="test-ava"><img src="https://placehold.co/80x80/182745/84d0e8?text=MV" alt="Meera V"><div><div class="test-name">Meera Varghese</div><div class="test-loc">Chennai · Rishikesh Retreat</div></div></div>
+      </div>
+      <div class="test-card fade-up" style="animation-delay:0.1s">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">I was terrified of the rafting. I did it anyway. And that is the whole story of my Rishikesh retreat — WanderHer gently pushed me to be braver than I thought I was.</p>
+        <div class="test-ava"><img src="https://placehold.co/80x80/182745/84d0e8?text=TS" alt="Tanya S"><div><div class="test-name">Tanya Sehgal</div><div class="test-loc">Delhi · Rishikesh Retreat</div></div></div>
+      </div>
+      <div class="test-card fade-up" style="animation-delay:0.2s">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">Yoga on the ghats at sunrise is something I will remember for the rest of my life. The mist, the sound of the river, the mountains behind. I've never felt so small and so alive at once.</p>
+        <div class="test-ava"><img src="https://placehold.co/80x80/182745/84d0e8?text=KR" alt="Kavya R"><div><div class="test-name">Kavya Rao</div><div class="test-loc">Bangalore · Rishikesh Retreat</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="section" id="register">
+  <div class="container">
+    <div style="max-width:900px;margin:0 auto">
+      <div class="text-center fade-up" style="margin-bottom:3rem">
+        <p class="sec-lbl">Express Interest</p>
+        <h2 class="sec-title">Claim your spot by<br><em>the Ganges</em></h2>
+        <div class="divider"></div>
+        <p style="color:var(--muted);font-size:0.88rem;margin-top:0.5rem">Only 20 spots available. Fill in your details and we'll confirm your place within 24 hours.</p>
+      </div>
+      <div class="form-card fade-up" id="regCard">
+        <form id="regForm" onsubmit="handleRegister(event)">
+          <div class="fg">
+            <div class="fgroup"><label class="flabel">Full Name *</label><input type="text" class="finput" placeholder="Your full name" required></div>
+            <div class="fgroup"><label class="flabel">Email Address *</label><input type="email" class="finput" placeholder="you@email.com" required></div>
+            <div class="fgroup"><label class="flabel">Phone Number *</label><input type="tel" class="finput" placeholder="+91 98765 43210" required></div>
+            <div class="fgroup"><label class="flabel">City / Location</label><input type="text" class="finput" placeholder="Where are you based?"></div>
+            <div class="fgroup"><label class="flabel">Age Range</label><select class="finput fselect"><option value="" disabled selected>Select age range</option><option>18–24</option><option>25–30</option><option>31–40</option><option>41–50</option><option>50+</option></select></div>
+            <div class="fgroup"><label class="flabel">Dietary Preference</label><select class="finput fselect"><option value="" disabled selected>Select preference</option><option>Vegetarian</option><option>Vegan</option><option>Non-Vegetarian</option><option>Jain</option><option>Gluten-Free</option></select></div>
+            <div class="fgroup"><label class="flabel">Room Preference</label><select class="finput fselect"><option value="" disabled selected>Select preference</option><option>Twin Sharing (Standard)</option><option>Single Occupancy (+₹8,000)</option></select></div>
+            <div class="fgroup"><label class="flabel">Emergency Contact</label><input type="tel" class="finput" placeholder="Emergency contact number"></div>
+            <div class="fgroup fg-full"><label class="flabel">Tell us about yourself (optional)</label><textarea class="finput ftextarea" placeholder="What draws you to Rishikesh? Any health conditions we should know about?"></textarea></div>
+            <div class="fgroup fg-full"><label class="fcheck"><input type="checkbox" required><span class="fcheck-lbl">I agree to the WanderHer terms & cancellation policy. I understand 50% is non-refundable if cancelled within 30 days of departure.</span></label></div>
+          </div>
+          <div style="margin-top:2rem;text-align:center">
+            <button type="submit" class="btn-sky" style="font-size:0.96rem;padding:1rem 3rem">Submit Registration →</button>
+          </div>
+        </form>
+        <div class="success-screen" id="regSuccess">
+          <div class="check-circle">✓</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:0.75rem">You're on the list! ✦</h3>
+          <p style="color:var(--muted);font-size:0.9rem;line-height:1.75">We'll confirm your spot within 24 hours. Scroll down to complete your booking with payment.</p>
+          <a href="#payment" class="btn-sky" style="margin-top:1.5rem;display:inline-flex">Complete Booking →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="section section-alt" id="payment">
+  <div class="container">
+    <div style="max-width:1000px;margin:0 auto">
+      <div class="text-center fade-up" style="margin-bottom:3rem">
+        <p class="sec-lbl">Complete Your Booking</p>
+        <h2 class="sec-title">Choose your package &amp;<br><em>secure your spot</em></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="pay-card fade-up">
+        <p class="sec-lbl" style="margin-bottom:1rem">Select Your Package</p>
+        <div class="pkg-grid" id="pkgGrid">
+          <div class="pkg-item" onclick="selectPkg(this,'28,999','Shared Room · Twin')">
+            <div class="pkg-label">Shared · Twin Room</div>
+            <div class="pkg-price">₹28,999</div><div class="pkg-per">per person</div>
+            <ul class="pkg-feats"><li>4 Days / 3 Nights</li><li>Twin sharing room</li><li>All meals included</li><li>All experiences</li><li>WanderHer welcome kit</li></ul>
+          </div>
+          <div class="pkg-item active" onclick="selectPkg(this,'36,999','Single Room · Solo')">
+            <div class="pkg-badge">Most Popular</div>
+            <div class="pkg-label">Solo · Private Room</div>
+            <div class="pkg-price">₹36,999</div><div class="pkg-per">per person</div>
+            <ul class="pkg-feats"><li>4 Days / 3 Nights</li><li>Private single room</li><li>All meals included</li><li>All experiences</li><li>Priority bookings</li><li>WanderHer welcome kit</li></ul>
+          </div>
+          <div class="pkg-item" onclick="selectPkg(this,'55,999','Duo · Bring a Friend')">
+            <div class="pkg-label">Duo · Bring a Friend</div>
+            <div class="pkg-price">₹55,999</div><div class="pkg-per">for 2 people</div>
+            <ul class="pkg-feats"><li>4 Days / 3 Nights each</li><li>Shared room for 2</li><li>All meals included</li><li>All experiences</li><li>Special duo session</li><li>2× welcome kits</li></ul>
+          </div>
+        </div>
+        <div class="pay-total">
+          <div><div class="pay-total-lbl">Total Amount</div><div class="pay-total-sub" id="pkgSubline">Single Room · Solo · 1 traveler</div></div>
+          <div class="pay-total-amt" id="payAmt">₹36,999</div>
+        </div>
+        <p class="sec-lbl" style="margin-bottom:1rem">Payment Method</p>
+        <div class="pay-tabs">
+          <button class="pay-tab active" onclick="switchTab('card',this)">💳 Card</button>
+          <button class="pay-tab" onclick="switchTab('upi',this)">📱 UPI / Net Banking</button>
+        </div>
+        <div id="cardPanel">
+          <div class="cc-preview">
+            <div class="cc-chip"></div>
+            <div class="cc-num" id="ccNum">•••• &nbsp;•••• &nbsp;•••• &nbsp;••••</div>
+            <div class="cc-row">
+              <div><div class="cc-lbl">Card Holder</div><div class="cc-val" id="ccHolder">YOUR NAME</div></div>
+              <div><div class="cc-lbl">Expires</div><div class="cc-val" id="ccExp">MM/YY</div></div>
+              <div style="text-align:right"><div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(238,244,250,0.55);font-style:italic">WanderHer</div></div>
+            </div>
+          </div>
+          <div class="fg">
+            <div class="fgroup fg-full"><label class="flabel">Name on Card</label><input type="text" class="finput" placeholder="As it appears on card" oninput="document.getElementById('ccHolder').textContent=this.value.toUpperCase()||'YOUR NAME'"></div>
+            <div class="fgroup fg-full"><label class="flabel">Card Number</label><input type="text" class="finput" placeholder="1234 5678 9012 3456" maxlength="19" oninput="fmtCard(this)"></div>
+            <div class="fgroup"><label class="flabel">Expiry Date</label><input type="text" class="finput" placeholder="MM / YY" maxlength="7" oninput="fmtExp(this)"></div>
+            <div class="fgroup"><label class="flabel">CVV</label><input type="password" class="finput" placeholder="•••" maxlength="4"></div>
+          </div>
+        </div>
+        <div id="upiPanel" style="display:none">
+          <div style="display:flex;flex-direction:column;gap:0.65rem;margin-bottom:1.5rem">
+            <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.2rem;background:rgba(90,184,212,0.04);border:1px solid rgba(90,184,212,0.1);border-radius:10px;cursor:pointer"><div style="width:40px;height:24px;border-radius:4px;background:#5f259f;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800">G</div><span>Google Pay</span></div>
+            <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.2rem;background:rgba(90,184,212,0.04);border:1px solid rgba(90,184,212,0.1);border-radius:10px;cursor:pointer"><div style="width:40px;height:24px;border-radius:4px;background:#002970;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800">P</div><span>PhonePe</span></div>
+            <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.2rem;background:rgba(90,184,212,0.04);border:1px solid rgba(90,184,212,0.1);border-radius:10px;cursor:pointer"><div style="width:40px;height:24px;border-radius:4px;background:#00baf2;color:#fff;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800">P</div><span>Paytm</span></div>
+          </div>
+          <div class="fgroup" style="max-width:400px"><label class="flabel">Or enter UPI ID</label><input type="text" class="finput" placeholder="yourname@upi"></div>
+        </div>
+        <div style="margin-top:2.25rem;display:flex;flex-direction:column;align-items:center;gap:1rem">
+          <button onclick="handlePayment()" class="btn-sky" style="font-size:0.96rem;padding:1rem 3.5rem;width:100%;max-width:420px;border:none;justify-content:center">🔒 Pay Securely</button>
+          <p style="font-size:0.72rem;color:var(--dim);text-align:center">256-bit SSL encryption · Secured by Razorpay · By paying you agree to our terms</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container"><div style="max-width:780px;margin:0 auto">
+    <div class="text-center fade-up" style="margin-bottom:3rem">
+      <p class="sec-lbl">Questions</p>
+      <h2 class="sec-title">Frequently <em>asked</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list fade-up">
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">How do I get to Rishikesh?</span><span class="faq-chev">▾</span></div><div class="faq-a"><div class="faq-a-in">The nearest railhead is Haridwar Junction (~25 km from Rishikesh). Nearest airport is Jolly Grant Airport, Dehradun (~45 km). From either, a taxi or bus to Rishikesh takes 45–60 minutes. We'll share a detailed travel guide after booking.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">Is rafting safe? Do I need experience?</span><span class="faq-chev">▾</span></div><div class="faq-a"><div class="faq-a-in">No experience is needed at all! Our certified river guides will brief you thoroughly beforehand. Safety equipment including life jackets and helmets are provided. Rafting is optional for those who prefer to skip it.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">What is the cancellation policy?</span><span class="faq-chev">▾</span></div><div class="faq-a"><div class="faq-a-in">45+ days before departure: 100% refund. 30–45 days: 50% refund. Within 30 days: non-refundable, but you may transfer your spot to another eligible traveler. We strongly recommend travel insurance.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">Is the food vegetarian / sattvic?</span><span class="faq-chev">▾</span></div><div class="faq-a"><div class="faq-a-in">All meals at the retreat are vegetarian by default (sattvic/yogic food). Non-vegetarian options can be arranged for dinners at restaurants. Vegan, Jain, and gluten-free diets are fully accommodated.</div></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-txt">What should I pack for Rishikesh?</span><span class="faq-chev">▾</span></div><div class="faq-a"><div class="faq-a-in">We'll send a comprehensive packing list after booking. Key items: yoga clothes, swimwear for rafting, light layers for evenings (October can be cool), walking shoes, sunscreen, and an open heart. October in Rishikesh is warm (22–30°C days, 15–18°C nights).</div></div></div>
+    </div>
+  </div></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-g">
+      <div class="footer-logo">
+        <img src="assets/logo.jpeg" alt="WanderHer">
+        <div class="footer-brand-name">WanderHer</div>
+        <p class="footer-desc">Creating transformative travel experiences for women — where adventure meets community, and every journey leads to a deeper understanding of yourself.</p>
+        <div class="socials" style="margin-top:1.5rem"><a href="#" class="social-btn">📷</a><a href="#" class="social-btn">✦</a><a href="#" class="social-btn">▶</a></div>
+      </div>
+      <div>
+        <div class="footer-heading">Explore</div>
+        <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="bir-retreat.html">Bir Retreat</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="#faq">FAQs</a></li></ul>
+      </div>
+      <div>
+        <div class="footer-heading">Rishikesh Retreat</div>
+        <ul class="footer-links"><li><a href="#about">About Rishikesh</a></li><li><a href="#experiences">Experiences</a></li><li><a href="#itinerary">Itinerary</a></li><li><a href="#register">Register</a></li><li><a href="#payment">Book Now</a></li></ul>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <ul class="footer-links"><li><a href="mailto:hello@wanderher.in">hello@wanderher.in</a></li><li><a href="#">+91 98765 43210</a></li><li><a href="#">Instagram</a></li><li><a href="#">WhatsApp</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 WanderHer. All rights reserved. Made with ♡ for women who wander.</p>
+      <p><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">Refunds</a></p>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+<script src="shared.js"></script>
+<script>
+const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('in'); }), { threshold: 0.07 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+setTimeout(() => { document.querySelectorAll('.fade-up').forEach(el => el.classList.add('in')); }, 250);
+// Sticky nav handled by shared.js
+function toggleDay(el) { const w = el.classList.contains('open'); document.querySelectorAll('.day-item').forEach(d => d.classList.remove('open')); if (!w) el.classList.add('open'); }
+function toggleFaq(btn) { const item = btn.closest('.faq-item'); const w = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(d => d.classList.remove('open')); if (!w) item.classList.add('open'); }
+function selectPkg(card, price, name) { document.querySelectorAll('.pkg-item').forEach(c => c.classList.remove('active')); card.classList.add('active'); document.getElementById('payAmt').textContent = '₹' + price; document.getElementById('pkgSubline').textContent = name + ' · 1 traveler'; }
+function switchTab(type, btn) { document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('active')); btn.classList.add('active'); document.getElementById('cardPanel').style.display = type==='card' ? 'block' : 'none'; document.getElementById('upiPanel').style.display = type==='upi' ? 'block' : 'none'; }
+function fmtCard(input) { let v = input.value.replace(/\D/g,'').slice(0,16); input.value = (v.match(/.{1,4}/g)||[v]).join(' '); document.getElementById('ccNum').textContent = v.padEnd(16,'•').match(/.{1,4}/g).join('  '); }
+function fmtExp(input) { let v = input.value.replace(/\D/g,'').slice(0,4); if (v.length >= 3) v = v.slice(0,2) + ' / ' + v.slice(2); input.value = v; document.getElementById('ccExp').textContent = v || 'MM/YY'; }
+function handleRegister(e) { e.preventDefault(); document.getElementById('regForm').style.display = 'none'; document.getElementById('regSuccess').style.display = 'block'; toast('🎉 Registration received! We\'ll confirm your spot within 24 hours.'); setTimeout(() => document.getElementById('payment').scrollIntoView({ behavior:'smooth' }), 2200); }
+function handlePayment() { toast('🔒 Processing… Integrate your payment gateway (e.g. Razorpay) here.'); }
+function toast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 4200); }
+document.addEventListener('DOMContentLoaded', () => { document.querySelector('.day-item').classList.add('open'); });
+</script>
+</body>
+</html>

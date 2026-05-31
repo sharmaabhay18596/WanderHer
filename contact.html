@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — WanderHer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,600&family=Dancing+Script:wght@600;700&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
+
+.info-cards { display: flex; flex-direction: column; gap: 1rem; }
+.info-card { display: flex; gap: 1.25rem; align-items: flex-start; padding: 1.5rem; background: var(--surface); border: 1px solid rgba(90,184,212,0.15); border-radius: 14px; text-decoration: none; transition: all 0.3s; }
+.info-card:hover { border-color: rgba(90,184,212,0.3); background: rgba(17,30,56,0.9); transform: translateY(-2px); }
+.info-icon { width: 48px; height: 48px; background: rgba(90,184,212,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.info-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sky); margin-bottom: 0.35rem; }
+.info-value { font-size: 0.95rem; font-weight: 500; color: var(--snow); margin-bottom: 0.2rem; }
+.info-sub { font-size: 0.8rem; color: var(--muted); }
+
+.faq-strip { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 2.5rem; }
+.faq-strip-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.faq-strip-q { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; cursor: pointer; transition: background 0.3s; font-size: 0.88rem; }
+.faq-strip-q:hover { background: rgba(90,184,212,0.04); }
+.faq-strip-chev { font-size: 0.6rem; color: var(--muted); transition: transform 0.3s; }
+.faq-strip-item.open .faq-strip-chev { transform: rotate(180deg); color: var(--sky); }
+.faq-strip-a { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
+.faq-strip-item.open .faq-strip-a { max-height: 200px; }
+.faq-strip-a-in { padding: 0 1.25rem 1rem; font-size: 0.83rem; color: var(--muted); line-height: 1.72; }
+
+.fg { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.fg-full { grid-column: 1 / -1; }
+
+.success-screen { display: none; text-align: center; padding: 2.5rem 2rem; }
+.check-circle { width: 72px; height: 72px; background: rgba(90,184,212,0.1); border: 2px solid var(--sky); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem; font-size: 1.75rem; }
+
+@media (max-width: 1024px) {
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+}
+@media (max-width: 768px) {
+  .fg { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-brand">
+    <img src="assets/logo.jpeg" alt="WanderHer">
+    <span class="nav-brand-name">WanderHer</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Retreats <span class="chev">▾</span></a>
+      <ul class="dropdown">
+        <li><a href="bir-retreat.html">🏔️ Bir, Himachal Pradesh</a></li>
+        <li><a href="rishikesh-retreat.html">🌊 Rishikesh, Uttarakhand</a></li>
+      </ul>
+    </li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="bir-retreat.html#register" class="nav-cta">Book a Retreat</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-stars"></div>
+  <div class="page-hero-eyebrow">We're here for you</div>
+  <h1 class="page-hero-title" style="position:relative">Say <em>hello</em></h1>
+  <p class="page-hero-sub" style="position:relative">Have a question about a retreat, want to group book, or just want to say hi? We'd love to hear from you. We typically respond within 24 hours.</p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Info + FAQ -->
+      <div class="fade-up">
+        <p class="sec-lbl">Get in Touch</p>
+        <h2 class="sec-title" style="margin-bottom:1.75rem;font-size:clamp(1.8rem,3vw,2.8rem)">We're a small team<br><em>that genuinely cares</em></h2>
+        <div class="info-cards">
+          <a href="mailto:hello@wanderher.in" class="info-card">
+            <div class="info-icon">✉️</div>
+            <div><div class="info-label">Email</div><div class="info-value">hello@wanderher.in</div><div class="info-sub">We reply within 24 hours</div></div>
+          </a>
+          <a href="#" class="info-card">
+            <div class="info-icon">📱</div>
+            <div><div class="info-label">WhatsApp / Phone</div><div class="info-value">+91 98765 43210</div><div class="info-sub">Mon–Sat, 10 AM – 7 PM IST</div></div>
+          </a>
+          <a href="#" class="info-card">
+            <div class="info-icon">📷</div>
+            <div><div class="info-label">Instagram</div><div class="info-value">@wanderher.in</div><div class="info-sub">DM us anytime — we're active!</div></div>
+          </a>
+          <a href="#" class="info-card">
+            <div class="info-icon">💬</div>
+            <div><div class="info-label">WhatsApp Community</div><div class="info-value">Join 2,000+ WanderHers</div><div class="info-sub">Community updates, early access, stories</div></div>
+          </a>
+        </div>
+
+        <div style="margin-top:2.5rem">
+          <p class="sec-lbl">Quick Answers</p>
+          <div class="faq-strip">
+            <div class="faq-strip-item"><div class="faq-strip-q" onclick="toggleFaq(this)"><span>How do I register for a retreat?</span><span class="faq-strip-chev">▾</span></div><div class="faq-strip-a"><div class="faq-strip-a-in">Visit the retreat page (Bir or Rishikesh), fill in the interest form, and we'll confirm your spot within 24 hours. You can then complete your booking with payment.</div></div></div>
+            <div class="faq-strip-item"><div class="faq-strip-q" onclick="toggleFaq(this)"><span>Can I book for a group?</span><span class="faq-strip-chev">▾</span></div><div class="faq-strip-a"><div class="faq-strip-a-in">Yes! For groups of 3+, email us at hello@wanderher.in with your group size and preferred retreat dates and we'll create a custom package for you.</div></div></div>
+            <div class="faq-strip-item"><div class="faq-strip-q" onclick="toggleFaq(this)"><span>What is the refund policy?</span><span class="faq-strip-chev">▾</span></div><div class="faq-strip-a"><div class="faq-strip-a-in">45+ days before: 100% refund. 30–45 days: 50% refund. Within 30 days: non-refundable but transferable. We strongly recommend travel insurance.</div></div></div>
+            <div class="faq-strip-item"><div class="faq-strip-q" onclick="toggleFaq(this)"><span>Are the retreats only for women?</span><span class="faq-strip-chev">▾</span></div><div class="faq-strip-a"><div class="faq-strip-a-in">Yes, 100%. WanderHer retreats are exclusively for women and non-binary individuals. This is core to creating the kind of safe, open community that defines our retreats.</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact Form -->
+      <div class="fade-up" style="animation-delay:0.1s">
+        <div class="form-card" id="contactCard">
+          <form id="contactForm" onsubmit="handleContact(event)">
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;margin-bottom:0.5rem">Send us a message</h3>
+            <p style="font-size:0.84rem;color:var(--muted);margin-bottom:2rem;line-height:1.65">We read every message personally. Whether it's a question, a concern, or just a hello — we're here.</p>
+            <div class="fg">
+              <div class="fgroup"><label class="flabel">Your Name *</label><input type="text" class="finput" placeholder="Full name" required></div>
+              <div class="fgroup"><label class="flabel">Email Address *</label><input type="email" class="finput" placeholder="you@email.com" required></div>
+              <div class="fgroup"><label class="flabel">Phone (optional)</label><input type="tel" class="finput" placeholder="+91 98765 43210"></div>
+              <div class="fgroup"><label class="flabel">Subject</label>
+                <select class="finput fselect">
+                  <option value="" disabled selected>What's this about?</option>
+                  <option>Bir Retreat — General Inquiry</option>
+                  <option>Bir Retreat — Booking Help</option>
+                  <option>Rishikesh Retreat — General Inquiry</option>
+                  <option>Rishikesh Retreat — Booking Help</option>
+                  <option>Group Booking Request</option>
+                  <option>Cancellation / Refund</option>
+                  <option>Partnership / Collaboration</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="fgroup fg-full"><label class="flabel">Message *</label><textarea class="finput ftextarea" style="min-height:140px" placeholder="Tell us what's on your mind..." required></textarea></div>
+              <div class="fgroup fg-full"><label class="fcheck"><input type="checkbox" required><span class="fcheck-lbl">I agree to WanderHer's privacy policy and consent to being contacted about my inquiry.</span></label></div>
+            </div>
+            <div style="margin-top:1.75rem">
+              <button type="submit" class="btn-sky" style="font-size:0.96rem;padding:1rem 2.5rem;width:100%;justify-content:center;border:none">Send Message ✦</button>
+            </div>
+          </form>
+          <div class="success-screen" id="contactSuccess">
+            <div class="check-circle">✓</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;margin-bottom:0.75rem">Message received! 🎉</h3>
+            <p style="color:var(--muted);font-size:0.9rem;line-height:1.75;margin-bottom:1.5rem">We'll get back to you within 24 hours. In the meantime, browse our retreats below.</p>
+            <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+              <a href="bir-retreat.html" class="btn-sky btn-sm">🏔️ Bir Retreat</a>
+              <a href="rishikesh-retreat.html" class="btn-ghost btn-sm">🌊 Rishikesh</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RETREATS CTA -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center fade-up">
+      <p class="sec-lbl">Ready to Explore?</p>
+      <h2 class="sec-title" style="margin-bottom:1rem">Browse our <em>retreats</em></h2>
+      <div class="divider"></div>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem">
+        <a href="bir-retreat.html" class="btn-sky">🏔️ Bir, Himachal Pradesh</a>
+        <a href="rishikesh-retreat.html" class="btn-ghost">🌊 Rishikesh, Uttarakhand</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-g">
+      <div class="footer-logo">
+        <img src="assets/logo.jpeg" alt="WanderHer">
+        <div class="footer-brand-name">WanderHer</div>
+        <p class="footer-desc">Creating transformative travel experiences for women — where adventure meets community and every journey deepens self-understanding.</p>
+        <div class="socials" style="margin-top:1.5rem"><a href="#" class="social-btn">📷</a><a href="#" class="social-btn">✦</a><a href="#" class="social-btn">▶</a></div>
+      </div>
+      <div><div class="footer-heading">Retreats</div><ul class="footer-links"><li><a href="bir-retreat.html">Bir, Himachal Pradesh</a></li><li><a href="rishikesh-retreat.html">Rishikesh, Uttarakhand</a></li></ul></div>
+      <div><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:hello@wanderher.in">hello@wanderher.in</a></li><li><a href="#">+91 98765 43210</a></li><li><a href="#">Instagram</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 WanderHer. All rights reserved. Made with ♡ for women who wander.</p>
+      <p><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a></p>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+<script src="shared.js"></script>
+<script>
+const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('in'); }), { threshold: 0.07 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+setTimeout(() => { document.querySelectorAll('.fade-up').forEach(el => el.classList.add('in')); }, 250);
+// Sticky nav handled by shared.js
+function toggleFaq(btn) { const item = btn.closest('.faq-strip-item'); const w = item.classList.contains('open'); document.querySelectorAll('.faq-strip-item').forEach(d => d.classList.remove('open')); if (!w) item.classList.add('open'); }
+function handleContact(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('contactSuccess').style.display = 'block';
+  const t = document.getElementById('toast');
+  t.textContent = '✓ Message sent! We\'ll be in touch within 24 hours.';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4000);
+}
+</script>
+</body>
+</html>

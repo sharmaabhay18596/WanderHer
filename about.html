@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — WanderHer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,600&family=Dancing+Script:wght@600;700&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.story-img { position: relative; border-radius: 20px; overflow: hidden; aspect-ratio: 4/5; }
+.story-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.story-img::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(90,184,212,0.18) 0%, transparent 55%), linear-gradient(to bottom, transparent 50%, rgba(6,8,16,0.72) 100%); z-index: 1; }
+.story-img-badge { position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; z-index: 2; background: rgba(9,14,26,0.85); backdrop-filter: blur(14px); border: 1px solid rgba(90,184,212,0.15); border-radius: 12px; padding: 1rem 1.25rem; }
+.story-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--sky-pale); line-height: 1.65; margin-bottom: 0.5rem; }
+.story-author { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.08em; }
+
+.values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.value-card { background: var(--surface); border: 1px solid rgba(90,184,212,0.15); border-radius: 16px; padding: 2rem; transition: all 0.35s; }
+.value-card:hover { border-color: rgba(90,184,212,0.3); transform: translateY(-3px); }
+.value-num { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: rgba(90,184,212,0.2); line-height: 1; margin-bottom: 0.75rem; }
+.value-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--snow); margin-bottom: 0.6rem; }
+.value-desc { font-size: 0.84rem; color: var(--muted); line-height: 1.72; }
+
+.team-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
+.team-card { text-align: center; }
+.team-img-wrap { width: 140px; height: 140px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.25rem; border: 2px solid rgba(90,184,212,0.25); position: relative; }
+.team-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.team-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; margin-bottom: 0.3rem; }
+.team-role { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky); margin-bottom: 0.75rem; }
+.team-bio { font-size: 0.83rem; color: var(--muted); line-height: 1.72; max-width: 280px; margin: 0 auto; }
+
+.stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 2rem; }
+.stat-item { text-align: center; padding: 2rem; background: var(--surface); border: 1px solid rgba(90,184,212,0.15); border-radius: 16px; }
+.stat-n { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--sky-light); display: block; }
+.stat-l { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.35rem; }
+
+.cta-band { background: linear-gradient(135deg, rgba(90,184,212,0.1) 0%, rgba(18,32,58,0.85) 100%); border: 1px solid rgba(90,184,212,0.2); border-radius: 24px; padding: 4rem 3rem; text-align: center; position: relative; overflow: hidden; }
+.cta-band::before { content: ''; position: absolute; top: -60px; right: -40px; width: 280px; height: 280px; border-radius: 50%; border: 1px solid rgba(90,184,212,0.07); }
+
+@media (max-width: 1024px) {
+  .story-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .story-img { aspect-ratio: 16/9; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .cta-band { padding: 2.5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-brand">
+    <img src="assets/logo.jpeg" alt="WanderHer">
+    <span class="nav-brand-name">WanderHer</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li class="has-dropdown">
+      <a href="#">Retreats <span class="chev">▾</span></a>
+      <ul class="dropdown">
+        <li><a href="bir-retreat.html">🏔️ Bir, Himachal Pradesh</a></li>
+        <li><a href="rishikesh-retreat.html">🌊 Rishikesh, Uttarakhand</a></li>
+      </ul>
+    </li>
+    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="bir-retreat.html#register" class="nav-cta">Book a Retreat</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-stars"></div>
+  <div class="page-hero-eyebrow">Our Story</div>
+  <h1 class="page-hero-title" style="position:relative">
+    We are <em>WanderHer</em>
+  </h1>
+  <p class="page-hero-sub" style="position:relative">A retreat brand built by women, for women — because we believe every woman deserves to feel free, brave, and deeply alive.</p>
+</section>
+
+<!-- OUR STORY -->
+<section class="section" id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-img fade-up">
+        <img src="https://images.unsplash.com/photo-1687693656699-44f0e8f2afbc?auto=format&fit=crop&w=700&q=80" alt="WanderHer community">
+        <div class="story-img-badge">
+          <p class="story-quote">"The world is so much bigger than the corner we've been told to stay in."</p>
+          <p class="story-author">— The WanderHer founding belief</p>
+        </div>
+      </div>
+      <div class="fade-up" style="animation-delay:0.1s">
+        <p class="sec-lbl">How We Started</p>
+        <h2 class="sec-title" style="margin-bottom:1.4rem">We built what we<br><em>needed to exist.</em></h2>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:1.25rem;font-size:0.94rem">It started in 2022 with two friends — Priya and Aditi — who had been trying to plan a solo trip together for years. Every time they searched for women's group travel, what they found was underwhelming: generic tours, unsafe conditions, or communities that just didn't feel like them.</p>
+        <p style="color:var(--muted);line-height:1.85;margin-bottom:1.25rem;font-size:0.94rem">So they created WanderHer. A space where the full spectrum of women — urban professionals, new mothers, recent graduates, divorcees, introverts, thrill-seekers — could come together and experience India's most dramatic landscapes in safety, community, and style.</p>
+        <p style="color:var(--muted);line-height:1.85;font-size:0.94rem">Three years later, over 200 women have traveled with us. We've laughed around Himalayan bonfires, cried at Ganga Aartis, and watched each other become braver. That's what WanderHer is — not a tour company, but a transformation engine.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item fade-up">
+        <span class="stat-n">200+</span>
+        <div class="stat-l">Women Hosted</div>
+      </div>
+      <div class="stat-item fade-up" style="animation-delay:0.08s">
+        <span class="stat-n">4.9★</span>
+        <div class="stat-l">Average Rating</div>
+      </div>
+      <div class="stat-item fade-up" style="animation-delay:0.16s">
+        <span class="stat-n">3</span>
+        <div class="stat-l">Years Running</div>
+      </div>
+      <div class="stat-item fade-up" style="animation-delay:0.24s">
+        <span class="stat-n">2</span>
+        <div class="stat-l">States Explored</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEET THE TEAM -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem">
+      <p class="sec-lbl">The People Behind WanderHer</p>
+      <h2 class="sec-title">Meet the women<br><em>who make it happen</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="team-grid">
+      <div class="team-card fade-up">
+        <div class="team-img-wrap">
+          <img src="https://placehold.co/280x280/182745/84d0e8?text=PA" alt="Priya Arora">
+        </div>
+        <h3 class="team-name">Priya Arora</h3>
+        <p class="team-role">Co-Founder & CEO</p>
+        <p class="team-bio">Former UX designer turned serial wanderer. Priya has traveled solo to 14 countries and believes deeply that women's relationship with the world changes when they travel on their own terms.</p>
+      </div>
+      <div class="team-card fade-up" style="animation-delay:0.1s">
+        <div class="team-img-wrap">
+          <img src="https://placehold.co/280x280/182745/84d0e8?text=AK" alt="Aditi Kaur">
+        </div>
+        <h3 class="team-name">Aditi Kaur</h3>
+        <p class="team-role">Co-Founder & Head of Experiences</p>
+        <p class="team-bio">A certified yoga teacher and wellness coach with 8 years of experience. Aditi curates every retreat experience from the ground up — each detail is personal, intentional, and deeply considered.</p>
+      </div>
+      <div class="team-card fade-up" style="animation-delay:0.2s">
+        <div class="team-img-wrap">
+          <img src="https://placehold.co/280x280/182745/84d0e8?text=SS" alt="Sanya Sharma">
+        </div>
+        <h3 class="team-name">Sanya Sharma</h3>
+        <p class="team-role">Head of Community & Partnerships</p>
+        <p class="team-bio">Sanya is the connector — she's built our community of 2,000+ WanderHer women from the ground up. She handles everything from local partnerships to making sure every traveler feels seen and welcome.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR VALUES -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem">
+      <p class="sec-lbl">What We Stand For</p>
+      <h2 class="sec-title">Our values are<br><em>non-negotiable</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="values-grid">
+      <div class="value-card fade-up">
+        <div class="value-num">01</div>
+        <h3 class="value-title">Safety Without Compromise</h3>
+        <p class="value-desc">Every accommodation is personally vetted. Every guide is background-checked and certified. Every location is scouted for safety. You will never be an afterthought at a WanderHer retreat.</p>
+      </div>
+      <div class="value-card fade-up" style="animation-delay:0.08s">
+        <div class="value-num">02</div>
+        <h3 class="value-title">Real Community</h3>
+        <p class="value-desc">We don't put strangers in a group and call it community. We carefully curate groups, create structured bonding experiences, and build relationships that last years beyond the retreat.</p>
+      </div>
+      <div class="value-card fade-up" style="animation-delay:0.16s">
+        <div class="value-num">03</div>
+        <h3 class="value-title">Authentic Experiences</h3>
+        <p class="value-desc">No tourist traps. No Instagram set-ups. We go where locals go, eat what locals eat, and experience destinations the way they deserve to be experienced — with depth and reverence.</p>
+      </div>
+      <div class="value-card fade-up" style="animation-delay:0.08s">
+        <div class="value-num">04</div>
+        <h3 class="value-title">Sustainable Travel</h3>
+        <p class="value-desc">We partner with local guides, local restaurants, and local businesses. Every rupee we spend stays in the communities we visit. We travel with gratitude, not entitlement.</p>
+      </div>
+      <div class="value-card fade-up" style="animation-delay:0.16s">
+        <div class="value-num">05</div>
+        <h3 class="value-title">Radical Inclusivity</h3>
+        <p class="value-desc">WanderHer is for all women — all ages, all backgrounds, all fitness levels. We design retreats that challenge you at your edge, whatever that edge looks like.</p>
+      </div>
+      <div class="value-card fade-up" style="animation-delay:0.24s">
+        <div class="value-num">06</div>
+        <h3 class="value-title">Transformation Over Tourism</h3>
+        <p class="value-desc">We're not in the business of ticking boxes. We're in the business of change. Every retreat is designed to leave you slightly different — braver, calmer, more yourself — than when you arrived.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem">
+      <p class="sec-lbl">What They Say</p>
+      <h2 class="sec-title">The community<br><em>speaks for itself</em></h2>
+      <div class="divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem">
+      <div class="test-card fade-up">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">WanderHer is not a travel company. It's a sisterhood. I went for the mountains and I stayed for the women I met. That trip changed the course of my life — I mean that literally.</p>
+        <div class="test-ava"><img src="https://placehold.co/80x80/182745/84d0e8?text=SV" alt="Sneha V"><div><div class="test-name">Sneha Verma</div><div class="test-loc">Hyderabad · Oct 2024</div></div></div>
+      </div>
+      <div class="test-card fade-up" style="animation-delay:0.1s">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">I had been wanting to travel solo for 6 years. Fear kept stopping me. WanderHer was the bridge — a solo trip that never felt alone. I'm now planning my third retreat.</p>
+        <div class="test-ava"><img src="https://placehold.co/80x80/182745/84d0e8?text=RP" alt="Richa P"><div><div class="test-name">Richa Pandey</div><div class="test-loc">Lucknow · Sept 2024</div></div></div>
+      </div>
+      <div class="test-card fade-up" style="animation-delay:0.2s">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-text">The attention to detail is unreal. From the welcome kit to the farewell breakfast, every single thing had thought behind it. You feel genuinely cared for from the moment you book.</p>
+        <div class="test-ava"><img src="https://placehold.co/80x80/182745/84d0e8?text=MN" alt="Mansi N"><div><div class="test-name">Mansi Nair</div><div class="test-loc">Kochi · Oct 2024</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="cta-band fade-up" style="max-width:780px;margin:0 auto">
+      <p class="sec-lbl" style="position:relative">Ready to Wander?</p>
+      <h2 class="sec-title" style="position:relative;font-size:clamp(1.8rem,3.5vw,3rem);margin-bottom:1rem">Your next chapter<br><em>starts here</em></h2>
+      <p style="color:var(--muted);font-size:0.9rem;position:relative;max-width:480px;margin:0 auto">Join 200+ women who've already chosen to step out of their comfort zone and into the extraordinary.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;position:relative">
+        <a href="bir-retreat.html" class="btn-sky">🏔️ Bir Retreat</a>
+        <a href="rishikesh-retreat.html" class="btn-ghost">🌊 Rishikesh Retreat</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-g">
+      <div class="footer-logo">
+        <img src="assets/logo.jpeg" alt="WanderHer">
+        <div class="footer-brand-name">WanderHer</div>
+        <p class="footer-desc">Creating transformative travel experiences for women — where adventure meets community, and every journey leads to a deeper understanding of yourself.</p>
+        <div class="socials" style="margin-top:1.5rem"><a href="#" class="social-btn">📷</a><a href="#" class="social-btn">✦</a><a href="#" class="social-btn">▶</a></div>
+      </div>
+      <div><div class="footer-heading">Retreats</div><ul class="footer-links"><li><a href="bir-retreat.html">Bir, Himachal Pradesh</a></li><li><a href="rishikesh-retreat.html">Rishikesh, Uttarakhand</a></li></ul></div>
+      <div><div class="footer-heading">Company</div><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div><div class="footer-heading">Contact</div><ul class="footer-links"><li><a href="mailto:hello@wanderher.in">hello@wanderher.in</a></li><li><a href="#">+91 98765 43210</a></li><li><a href="#">Instagram</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 WanderHer. All rights reserved. Made with ♡ for women who wander.</p>
+      <p><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a></p>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast"></div>
+<script src="shared.js"></script>
+<script>
+const obs = new IntersectionObserver(e => e.forEach(x => { if (x.isIntersecting) x.target.classList.add('in'); }), { threshold: 0.07 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+setTimeout(() => { document.querySelectorAll('.fade-up').forEach(el => el.classList.add('in')); }, 250);
+// Sticky nav handled by shared.js
+</script>
+</body>
+</html>
