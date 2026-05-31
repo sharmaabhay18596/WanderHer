@@ -128,11 +128,11 @@
             <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;margin-bottom:0.5rem">Send us a message</h3>
             <p style="font-size:0.84rem;color:var(--muted);margin-bottom:2rem;line-height:1.65">We read every message personally. Whether it's a question, a concern, or just a hello — we're here.</p>
             <div class="fg">
-              <div class="fgroup"><label class="flabel">Your Name *</label><input type="text" class="finput" placeholder="Full name" required></div>
-              <div class="fgroup"><label class="flabel">Email Address *</label><input type="email" class="finput" placeholder="you@email.com" required></div>
-              <div class="fgroup"><label class="flabel">Phone (optional)</label><input type="tel" class="finput" placeholder="+91 98765 43210"></div>
+              <div class="fgroup"><label class="flabel">Your Name *</label><input type="text" name="Full Name" class="finput" placeholder="Full name" required></div>
+              <div class="fgroup"><label class="flabel">Email Address *</label><input type="email" name="Email" class="finput" placeholder="you@email.com" required></div>
+              <div class="fgroup"><label class="flabel">Phone (optional)</label><input type="tel" name="Phone" class="finput" placeholder="+91 98765 43210"></div>
               <div class="fgroup"><label class="flabel">Subject</label>
-                <select class="finput fselect">
+                <select name="Inquiry Type" class="finput fselect">
                   <option value="" disabled selected>What's this about?</option>
                   <option>Bir Retreat — General Inquiry</option>
                   <option>Bir Retreat — Booking Help</option>
@@ -144,8 +144,8 @@
                   <option>Something else</option>
                 </select>
               </div>
-              <div class="fgroup fg-full"><label class="flabel">Message *</label><textarea class="finput ftextarea" style="min-height:140px" placeholder="Tell us what's on your mind..." required></textarea></div>
-              <div class="fgroup fg-full"><label class="fcheck"><input type="checkbox" required><span class="fcheck-lbl">I agree to WanderHer's privacy policy and consent to being contacted about my inquiry.</span></label></div>
+              <div class="fgroup fg-full"><label class="flabel">Message *</label><textarea name="Message" class="finput ftextarea" style="min-height:140px" placeholder="Tell us what's on your mind..." required></textarea></div>
+              <div class="fgroup fg-full"><label class="fcheck"><input type="checkbox" name="Privacy Agreed" value="Yes" required><span class="fcheck-lbl">I agree to WanderHer's privacy policy and consent to being contacted about my inquiry.</span></label></div>
             </div>
             <div style="margin-top:1.75rem">
               <button type="submit" class="btn-sky" style="font-size:0.96rem;padding:1rem 2.5rem;width:100%;justify-content:center;border:none">Send Message ✦</button>

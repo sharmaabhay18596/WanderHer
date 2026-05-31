@@ -498,16 +498,16 @@
           <input type="hidden" name="subject" value="New Registration — Rishikesh River Retreat">
           <input type="hidden" name="from_name" value="WanderHer Website">
           <div class="fg">
-            <div class="fgroup"><label class="flabel">Full Name *</label><input type="text" class="finput" placeholder="Your full name" required></div>
-            <div class="fgroup"><label class="flabel">Email Address *</label><input type="email" class="finput" placeholder="you@email.com" required></div>
-            <div class="fgroup"><label class="flabel">Phone Number *</label><input type="tel" class="finput" placeholder="+91 98765 43210" required></div>
-            <div class="fgroup"><label class="flabel">City / Location</label><input type="text" class="finput" placeholder="Where are you based?"></div>
-            <div class="fgroup"><label class="flabel">Age Range</label><select class="finput fselect"><option value="" disabled selected>Select age range</option><option>18–24</option><option>25–30</option><option>31–40</option><option>41–50</option><option>50+</option></select></div>
-            <div class="fgroup"><label class="flabel">Dietary Preference</label><select class="finput fselect"><option value="" disabled selected>Select preference</option><option>Vegetarian</option><option>Vegan</option><option>Non-Vegetarian</option><option>Jain</option><option>Gluten-Free</option></select></div>
-            <div class="fgroup"><label class="flabel">Room Preference</label><select class="finput fselect"><option value="" disabled selected>Select preference</option><option>Twin Sharing (Standard)</option><option>Single Occupancy (+₹8,000)</option></select></div>
-            <div class="fgroup"><label class="flabel">Emergency Contact</label><input type="tel" class="finput" placeholder="Emergency contact number"></div>
-            <div class="fgroup fg-full"><label class="flabel">Tell us about yourself (optional)</label><textarea class="finput ftextarea" placeholder="What draws you to Rishikesh? Any health conditions we should know about?"></textarea></div>
-            <div class="fgroup fg-full"><label class="fcheck"><input type="checkbox" required><span class="fcheck-lbl">I agree to the WanderHer terms & cancellation policy. I understand 50% is non-refundable if cancelled within 30 days of departure.</span></label></div>
+            <div class="fgroup"><label class="flabel">Full Name *</label><input type="text" name="Full Name" class="finput" placeholder="Your full name" required></div>
+            <div class="fgroup"><label class="flabel">Email Address *</label><input type="email" name="Email" class="finput" placeholder="you@email.com" required></div>
+            <div class="fgroup"><label class="flabel">Phone Number *</label><input type="tel" name="Phone" class="finput" placeholder="+91 98765 43210" required></div>
+            <div class="fgroup"><label class="flabel">City / Location</label><input type="text" name="City" class="finput" placeholder="Where are you based?"></div>
+            <div class="fgroup"><label class="flabel">Age Range</label><select name="Age Range" class="finput fselect"><option value="" disabled selected>Select age range</option><option>18–24</option><option>25–30</option><option>31–40</option><option>41–50</option><option>50+</option></select></div>
+            <div class="fgroup"><label class="flabel">Dietary Preference</label><select name="Dietary Preference" class="finput fselect"><option value="" disabled selected>Select preference</option><option>Vegetarian</option><option>Vegan</option><option>Non-Vegetarian</option><option>Jain</option><option>Gluten-Free</option></select></div>
+            <div class="fgroup"><label class="flabel">Room Preference</label><select name="Room Preference" class="finput fselect"><option value="" disabled selected>Select preference</option><option>Twin Sharing (Standard)</option><option>Single Occupancy (+₹8,000)</option></select></div>
+            <div class="fgroup"><label class="flabel">Emergency Contact</label><input type="tel" name="Emergency Contact" class="finput" placeholder="Emergency contact number"></div>
+            <div class="fgroup fg-full"><label class="flabel">Tell us about yourself (optional)</label><textarea name="About Yourself" class="finput ftextarea" placeholder="What draws you to Rishikesh? Any health conditions we should know about?"></textarea></div>
+            <div class="fgroup fg-full"><label class="fcheck"><input type="checkbox" name="Terms Agreed" value="Yes" required><span class="fcheck-lbl">I agree to the WanderHer terms & cancellation policy. I understand 50% is non-refundable if cancelled within 30 days of departure.</span></label></div>
           </div>
           <div style="margin-top:2rem;text-align:center">
             <button type="submit" class="btn-sky" style="font-size:0.96rem;padding:1rem 3rem">Submit Registration →</button>
