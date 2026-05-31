@@ -122,6 +122,9 @@
       <div class="fade-up" style="animation-delay:0.1s">
         <div class="form-card" id="contactCard">
           <form id="contactForm" onsubmit="handleContact(event)">
+            <input type="hidden" name="access_key" value="1c8f5779-e84c-4067-96d3-ce069ca9f1f1">
+            <input type="hidden" name="subject" value="New Message — WanderHer Contact Form">
+            <input type="hidden" name="from_name" value="WanderHer Website">
             <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:300;margin-bottom:0.5rem">Send us a message</h3>
             <p style="font-size:0.84rem;color:var(--muted);margin-bottom:2rem;line-height:1.65">We read every message personally. Whether it's a question, a concern, or just a hello — we're here.</p>
             <div class="fg">
@@ -206,14 +209,36 @@ document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 setTimeout(() => { document.querySelectorAll('.fade-up').forEach(el => el.classList.add('in')); }, 250);
 // Sticky nav handled by shared.js
 function toggleFaq(btn) { const item = btn.closest('.faq-strip-item'); const w = item.classList.contains('open'); document.querySelectorAll('.faq-strip-item').forEach(d => d.classList.remove('open')); if (!w) item.classList.add('open'); }
-function handleContact(e) {
+async function handleContact(e) {
   e.preventDefault();
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('contactSuccess').style.display = 'block';
-  const t = document.getElementById('toast');
-  t.textContent = '✓ Message sent! We\'ll be in touch within 24 hours.';
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 4000);
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  const orig = btn.textContent;
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('contactSuccess').style.display = 'block';
+      const t = document.getElementById('toast');
+      t.textContent = '✓ Message sent! We\'ll be in touch within 24 hours.';
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 4000);
+    } else {
+      const t = document.getElementById('toast');
+      t.textContent = '❌ Something went wrong. Please try again.';
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 4000);
+      btn.textContent = orig; btn.disabled = false;
+    }
+  } catch {
+    const t = document.getElementById('toast');
+    t.textContent = '❌ Network error. Please try again.';
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 4000);
+    btn.textContent = orig; btn.disabled = false;
+  }
 }
 </script>
 </body>

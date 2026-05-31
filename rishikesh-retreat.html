@@ -494,6 +494,9 @@
       </div>
       <div class="form-card fade-up" id="regCard">
         <form id="regForm" onsubmit="handleRegister(event)">
+          <input type="hidden" name="access_key" value="1c8f5779-e84c-4067-96d3-ce069ca9f1f1">
+          <input type="hidden" name="subject" value="New Registration — Rishikesh River Retreat">
+          <input type="hidden" name="from_name" value="WanderHer Website">
           <div class="fg">
             <div class="fgroup"><label class="flabel">Full Name *</label><input type="text" class="finput" placeholder="Your full name" required></div>
             <div class="fgroup"><label class="flabel">Email Address *</label><input type="email" class="finput" placeholder="you@email.com" required></div>
@@ -653,7 +656,26 @@ function selectPkg(card, price, name) { document.querySelectorAll('.pkg-item').f
 function switchTab(type, btn) { document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('active')); btn.classList.add('active'); document.getElementById('cardPanel').style.display = type==='card' ? 'block' : 'none'; document.getElementById('upiPanel').style.display = type==='upi' ? 'block' : 'none'; }
 function fmtCard(input) { let v = input.value.replace(/\D/g,'').slice(0,16); input.value = (v.match(/.{1,4}/g)||[v]).join(' '); document.getElementById('ccNum').textContent = v.padEnd(16,'•').match(/.{1,4}/g).join('  '); }
 function fmtExp(input) { let v = input.value.replace(/\D/g,'').slice(0,4); if (v.length >= 3) v = v.slice(0,2) + ' / ' + v.slice(2); input.value = v; document.getElementById('ccExp').textContent = v || 'MM/YY'; }
-function handleRegister(e) { e.preventDefault(); document.getElementById('regForm').style.display = 'none'; document.getElementById('regSuccess').style.display = 'block'; toast('🎉 Registration received! We\'ll confirm your spot within 24 hours.'); setTimeout(() => document.getElementById('payment').scrollIntoView({ behavior:'smooth' }), 2200); }
+async function handleRegister(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  const orig = btn.textContent;
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+    const data = await res.json();
+    if (data.success) {
+      form.style.display = 'none';
+      document.getElementById('regSuccess').style.display = 'block';
+      toast('🎉 Registration received! We\'ll confirm your spot within 24 hours.');
+      setTimeout(() => document.getElementById('payment').scrollIntoView({ behavior: 'smooth' }), 2200);
+    } else {
+      toast('❌ Something went wrong. Please try again.');
+      btn.textContent = orig; btn.disabled = false;
+    }
+  } catch { toast('❌ Network error. Please try again.'); btn.textContent = orig; btn.disabled = false; }
+}
 function handlePayment() { toast('🔒 Processing… Integrate your payment gateway (e.g. Razorpay) here.'); }
 function toast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 4200); }
 document.addEventListener('DOMContentLoaded', () => { document.querySelector('.day-item').classList.add('open'); });

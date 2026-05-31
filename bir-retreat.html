@@ -1005,6 +1005,9 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
 
       <div class="form-card fade-up" id="regCard">
         <form id="regForm" onsubmit="handleRegister(event)">
+          <input type="hidden" name="access_key" value="1c8f5779-e84c-4067-96d3-ce069ca9f1f1">
+          <input type="hidden" name="subject" value="New Registration — Bir Himalaya Retreat">
+          <input type="hidden" name="from_name" value="WanderHer Website">
           <div class="fg">
             <div class="fgroup">
               <label class="flabel">Full Name *</label>
@@ -1353,12 +1356,25 @@ function fmtExp(input) {
 }
 
 // ── Register form
-function handleRegister(e) {
+async function handleRegister(e) {
   e.preventDefault();
-  document.getElementById('regForm').style.display = 'none';
-  document.getElementById('regSuccess').style.display = 'block';
-  toast('🎉 Registration received! We\'ll confirm your spot within 24 hours.');
-  setTimeout(() => document.getElementById('payment').scrollIntoView({ behavior:'smooth' }), 2200);
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  const orig = btn.textContent;
+  btn.textContent = 'Sending…'; btn.disabled = true;
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) });
+    const data = await res.json();
+    if (data.success) {
+      form.style.display = 'none';
+      document.getElementById('regSuccess').style.display = 'block';
+      toast('🎉 Registration received! We\'ll confirm your spot within 24 hours.');
+      setTimeout(() => document.getElementById('payment').scrollIntoView({ behavior: 'smooth' }), 2200);
+    } else {
+      toast('❌ Something went wrong. Please try again.');
+      btn.textContent = orig; btn.disabled = false;
+    }
+  } catch { toast('❌ Network error. Please try again.'); btn.textContent = orig; btn.disabled = false; }
 }
 
 // ── Payment
